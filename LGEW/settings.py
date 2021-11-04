@@ -76,12 +76,13 @@ WSGI_APPLICATION = 'LGEW.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'LGEW',
-        'HOST':'localhost',
-        'PORT':'3308',
-        'PASSWORD' : '1234567890',
-        'USER' : 'root',
+        # 'ENGINE': 'django.db.backends.mysql',
+        # 'NAME': 'LGEW',
+        # 'HOST':'localhost',
+        # 'PORT':'3308',
+        # # 'PASSWORD' : '1234567890',
+        # 'PASSWORD' : '',
+        # 'USER' : 'root',
     }
 }
 
