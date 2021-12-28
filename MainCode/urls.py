@@ -13,7 +13,7 @@ urlpatterns = [
     path('conductor', views.conductor),
     path('feedback', views.feedback),
     path('login', views.login),
-    path('passanger', views.passenger),
+    path('passenger', views.passenger),
     path('route', views.Route),
     path('routeadd', views.RouteAdd),
     path('stopdetails', views.stopdetails),

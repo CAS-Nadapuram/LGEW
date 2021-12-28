@@ -10,11 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-import os
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -55,7 +55,7 @@ ROOT_URLCONF = 'LGEW.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR,"templates")],
+        'DIRS': [os.path.join(BASE_DIR, "templates")],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -76,13 +76,14 @@ WSGI_APPLICATION = 'LGEW.wsgi.application'
 
 DATABASES = {
     'default': {
-        # 'ENGINE': 'django.db.backends.mysql',
-        # 'NAME': 'LGEW',
-        # 'HOST':'localhost',
-        # 'PORT':'3308',
-        # # 'PASSWORD' : '1234567890',
-        # 'PASSWORD' : '',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'LGEW',
+        'HOST':'localhost',
+        'PORT':'3308',
+        # 'PASSWORD' : '1234567890',
         # 'USER' : 'root',
+        'PASSWORD' : 'vishnu',
+        'USER' : 'vaishnav',
     }
 }
 

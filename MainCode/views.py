@@ -2,70 +2,64 @@ from django.shortcuts import render
 
 
 def main(request):
-    return render(request,"login.html")
+    return render(request, "login.html")
+
 
 def adminhome(request):
-    return render(request,"AdminHome.html")
+    return render(request, "AdminHome.html")
+
 
 def AddBusTime(request):
-    return render(request,"AddBusTime.html")
+    return render(request, "AddBusTime.html")
+
 
 def busmanagement(request):
-    return render(request,"busManagement.html")
+    return render(request, "busManagement.html")
+
 
 def addconductor(request):
-    return render(request,"AddContuctor.html")
+    return render(request, "conductor.html")
+
 
 def busmanagement_add(request):
-    return render(request,"Busmanagement-add.html")
+    return render(request, "BusManagement-add.html")
+
 
 def bustime(request):
-    return render(request,"BusTime.html")
+    return render(request, "BusTime.html")
+
 
 def AddStop(request):
-    return render(request,"AddStop.html")
+    return render(request, "AddStop.html")
+
 
 def conductor(request):
-    return render(request,"conductor.html")
+    return render(request, "conductor.html")
+
 
 def feedback(request):
-    return render(request,"feedback.html")
+    return render(request, "feedback.html")
+
 
 def login(request):
-    return render(request,"login.html")
+    return render(request, "login.html")
+
 
 def passenger(request):
-    return render(request,"passenger.html")
+    return render(request, "passenger.html")
+
 
 def Route(request):
-    return render(request,"Route.html")
+    return render(request, "Route.html")
+
 
 def RouteAdd(request):
-    return render(request,"RouteAdd.html")
+    return render(request, "RouteAdd.html")
+
 
 def stopdetails(request):
-    return render(request,"stopdetails.html")
+    return render(request, "stopdetails.html")
+
 
 def track(request):
-    return render(request,"track.html")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    return render(request, "track.html")
