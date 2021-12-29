@@ -8,21 +8,22 @@
 </head>
 <body>
     <header>
-        <form action="">
+        <form method = "POST" name = "LoginForm" action="">
+            {% csrf_token %}
             <table>
                 <tr>
                     <td colspan="2" align="center">Login</td>
                 </tr>
                 <tr>
                     <td>Username</td>
-                    <td><input type="text"></td>
+                    <td><input type="text" name = "username" required></td>
                 </tr>
                 <tr>
                     <td>password</td>
-                    <td><input type="password"></td>
+                    <td><input type="password" name = "password" required></td>
                 </tr>
                 <tr>
-                    <td colspan="2" align="center"><input type="submit"></td>
+                    <td colspan="2" align="center"><input type="submit" name = "submit"></td>
                 </tr>
             </table>
         </form>

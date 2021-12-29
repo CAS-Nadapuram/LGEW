@@ -9,30 +9,31 @@
   <body>
     <header>
       <div>
-        <form action="">
+        <form method = "POST" action="">
+          {% csrf_token %}
           <table>
             <tr>
-              <td>Bus registe number</td>
-              <td><input type="text" /></td>
+              <td>Bus register number</td>
+              <td><input type="text" name = "register_number"/></td>
             </tr>
             <tr>
               <td>Route</td>
               <td>
-                <select name="" id="">
-                  <option value="">vatakara</option>
-                  <option value="">vatakara</option>
-                  <option value="">vatakara</option>
+                <select name="route">
+                  <option value="vatakara">vatakara</option>
+                  <option value="kozhikode">kozhikode</option>
+                  <option value="kannur">kannur</option>
                 </select>
               </td>
             </tr>
             <tr>
               <td>Number of seats</td>
               <td>
-                <input type="number" name="" id="" />
+                <input type="number" name="NumberOfSeats" id="" />
               </td>
             </tr>
             <tr>
-              <td><input type="submit" value="" /></td>
+              <td colspan="2" align ="center"><input type="submit" value="submit"/></td>
             </tr>
           </table>
         </form>

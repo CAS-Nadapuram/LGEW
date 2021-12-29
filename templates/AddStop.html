@@ -9,25 +9,26 @@
   <body>
     <header>
       <div>
-          <form action="">
+          <form method = "POST" action="">
+            {% csrf_token %}
           <table border="0">
             <tr>
               <td>
-                <label for="">bus</label>
+                <label for="">Bus</label>
               </td>
               <td>
-                <select name="" id="">
-                  <option value="">KL18N8442</option>
-                  <option value="">KL18N8442</option>
+                <select name="Bus" id="">
+                  <option value="KL18N8442">KL18N8442</option>
+                  <option value="KL18N8442">KL18N8442</option>
                 </select>
               </td>
             </tr>
             <tr>
               <td>
-                <label for="">stop</label>
+                <label for="">Stop</label>
               </td>
               <td>
-                  <input type="text" />
+                  <input type="text" name = "Stop"/>
               </td>
             </tr>
             <tr>
@@ -35,7 +36,7 @@
                     <label for="">Latitude</label>
                 </td>
                 <td>
-                    <input type="text">
+                    <input type="text" name = "Latitude">
                 </td>
             </tr>
             <tr>
@@ -43,14 +44,14 @@
                     <label for="">Longitude</label>
                 </td>
                 <td>
-                    <input type="text">
+                    <input type="text" name = "Longitude">
                 </td>
             </tr>
             <tr>
                 <td>
                     <label for="">Ticket charge</label>
                 </td>
-                <td><input type="text"></td>
+                <td><input type="number" name = "TicketCharge"></td>
             </tr>
             <tr>
                 <td colspan="2" align="center"><input type="submit" value="submit"></td>

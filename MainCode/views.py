@@ -2,6 +2,12 @@ from django.shortcuts import render
 
 
 def main(request):
+    if request.method == "POST":
+        username = request.POST['username']
+        password = request.POST['password']
+        print("password is ", password, "username is", username)
+    else:
+        print("error")
     return render(request, "login.html")
 
 
@@ -22,6 +28,13 @@ def addconductor(request):
 
 
 def busmanagement_add(request):
+    if request.method == "POST":
+        RegisterNUmber = request.POST['register_number']
+        Route = request.POST['route']
+        NumberOfSeats = request.POST['NumberOfSeats']
+        print("register number = ", RegisterNUmber, "\n Route = ",
+              Route, "\n number of seats = ", NumberOfSeats)
+
     return render(request, "BusManagement-add.html")
 
 
@@ -30,6 +43,18 @@ def bustime(request):
 
 
 def AddStop(request):
+    if request.method == "POST":
+        Bus = request.POST['Bus']
+        Stop = request.POST['Stop']
+        Latitude = request.POST['Latitude']
+        Longitude = request.POST['Longitude']
+        TicketCharge = request.POST['TicketCharge']
+        print("\n Bus = ", Bus,
+              "\n stop = ", Stop,
+              "\n Latitude = ", Latitude,
+              "\n longitude = ", Longitude,
+              "\n Ticket charge = ", TicketCharge,
+              )
     return render(request, "AddStop.html")
 
 
@@ -54,6 +79,13 @@ def Route(request):
 
 
 def RouteAdd(request):
+    if request.method == "GET":
+        StartingStop = request.GET['StartingStop']
+        EndingStop = request.GET['EndingStop']
+        print(
+            "\n Starting stop = ", StartingStop,
+            "\n Ending stop = ", EndingStop,
+        )
     return render(request, "RouteAdd.html")
 
 
