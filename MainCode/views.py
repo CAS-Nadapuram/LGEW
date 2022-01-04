@@ -1,13 +1,21 @@
-from django.shortcuts import render
-
-
+from django.shortcuts import render, redirect
+from django.contrib.auth.models import User, auth
+from django.contrib import messages
 def main(request):
     if request.method == "POST":
-        username = request.POST['username']
-        password = request.POST['password']
-        print("password is ", password, "username is", username)
+        Username = request.POST['username']
+        Password = request.POST['password']
+        user = auth.authenticate(username = Username , password=Password)
+        if user is not None:
+            auth.login(request, user)
+            return redirect("/adminhome")
+        else:
+             messages.error(request, "invalid user")
+             print(messages)
+             return redirect("/")
+        
     else:
-        print("error")
+        pass
     return render(request, "login.html")
 
 
@@ -24,7 +32,9 @@ def busmanagement(request):
 
 
 def addconductor(request):
-    return render(request, "conductor.html")
+    
+    
+    return render(request, "AddConductor.html")
 
 
 def busmanagement_add(request):
@@ -32,8 +42,11 @@ def busmanagement_add(request):
         RegisterNUmber = request.POST['register_number']
         Route = request.POST['route']
         NumberOfSeats = request.POST['NumberOfSeats']
-        print("register number = ", RegisterNUmber, "\n Route = ",
-              Route, "\n number of seats = ", NumberOfSeats)
+        print(
+            "register number = ", RegisterNUmber,
+            "\n Route = ",  Route,
+            "\n number of seats = ", NumberOfSeats
+        )
 
     return render(request, "BusManagement-add.html")
 
