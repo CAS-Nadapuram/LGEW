@@ -2,7 +2,6 @@ from django.db import models
 
 # # Create your models here.
 
-
 # class conductor(models.Model):
 #     UserId = models.AutoField(primary_key=True)
 #     FirstName = models.CharField(max_length=20)
@@ -13,19 +12,16 @@ from django.db import models
 #     pin = models.BigIntegerField()
 #     Bus = models.CharField(max_length=20)
 
-
 # class feedback(models.Model):
 #     # User_id
 #     Feedback = models.CharField(max_length=120)
 #     Date = models.DateField()
-
 
 # class login(models.Model):
 #     UserId = models.AutoField(primary_key=True)
 #     Username = models.CharField(max_length=25)
 #     Password = models.CharField(max_length=25)
 #     Type = models.CharField(max_length=25)
-
 
 # class passenger(models.Model):
 #     UserId = models.AutoField(primary_key=True)
@@ -49,7 +45,6 @@ from django.db import models
 #     BusId = models.IntegerField()
 #     Latitude = models.FloatField()
 #     Longitude = models.FloatField()
-
 
 # class BusStop(models.Model):
 #     StopId = models.AutoField(primary_key=True)
