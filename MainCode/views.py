@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User, auth
 from django.contrib import messages
-
+from .models import *
 
 def main(request):
     if request.method == "POST":
@@ -13,7 +13,6 @@ def main(request):
             return redirect("/adminhome")
         else:
             messages.error(request, "invalid user")
-            print(messages)
             return redirect("/")
     else:
         pass
@@ -43,6 +42,8 @@ def addconductor(request):
         Username = request.POST['username']
         Password = request.POST['password']
         print(FirstName, LastName, Place, Post, Pin, Bus, Username, Password)
+        Conductor.objects.create(FirstName = FirstName, LastName = LastName, Place = Place, 
+            Post = Post, pin = Pin, Bus = Bus,Contact = 0000000)
     return render(request, "AddConductor.html")
 
 

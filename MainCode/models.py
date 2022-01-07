@@ -2,15 +2,15 @@ from django.db import models
 
 # # Create your models here.
 
-# class conductor(models.Model):
-#     UserId = models.AutoField(primary_key=True)
-#     FirstName = models.CharField(max_length=20)
-#     LastName = models.CharField(max_length=20)
-#     Contact = models.BigIntegerField()
-#     Place = models.CharField(max_length=20)
-#     Post = models.CharField(max_length=20)
-#     pin = models.BigIntegerField()
-#     Bus = models.CharField(max_length=20)
+class Conductor(models.Model):
+    UserId = models.AutoField(primary_key=True)
+    FirstName = models.CharField(max_length=20, null=True)
+    LastName = models.CharField(max_length=20, null=True)
+    Contact = models.BigIntegerField(null=True)
+    Place = models.CharField(max_length=20,null=True)
+    Post = models.CharField(max_length=20, null=True)
+    pin = models.BigIntegerField(null=True)
+    Bus = models.CharField(max_length=20, null=True)
 
 # class feedback(models.Model):
 #     # User_id
@@ -23,17 +23,17 @@ from django.db import models
 #     Password = models.CharField(max_length=25)
 #     Type = models.CharField(max_length=25)
 
-# class passenger(models.Model):
-#     UserId = models.AutoField(primary_key=True)
-#     LoginId = models.IntegerField()
-#     FirstName = models.CharField(max_length=20)
-#     LastName = models.CharField(max_length=20)
-#     Contact = models.BigIntegerField()
-#     Place = models.CharField(max_length=20)
-#     Post = models.CharField(max_length=20)
-#     pin = models.BigIntegerField()
+class Passenger(models.Model):
+    UserId = models.AutoField(primary_key=True)
+    LoginId = models.IntegerField()
+    FirstName = models.CharField(max_length=20, null=True)
+    LastName = models.CharField(max_length=20, null=True)
+    Contact = models.BigIntegerField(null=True)
+    Place = models.CharField(max_length=20, null=True)
+    Post = models.CharField(max_length=20, null=True)
+    pin = models.BigIntegerField(null=True)
 
-# class bank(models.Model):
+# class Bank(models.Model):
 #     # BankId = models.autoField(primary_key = True)
 #     PassangerId = models.IntegerField()
 #     AccountNumber = models.IntegerField()
