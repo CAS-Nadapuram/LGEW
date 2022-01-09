@@ -10,18 +10,6 @@
     <header>
         <form action="">
             <table border="1">
-                <!-- <tr>
-                    <td><a href="/">  Home</td></a>
-                    <td><a href="/">  Conductor Details</td></a>
-                    <td><a href="/">  Bus Management</td></a>
-                    <td><a href="/">  Router</td></a>
-                    <td><a href="/">  stop details</td></a>
-                    <td><a href="/">  Bus time</td></a>
-                    <td><a href="/">  feedback</td></a>
-                    <td><a href="/">  Passanger</td></a>
-                    <td><a href="/">  track bus</td></a>
-                    <td><a href="/">  logout</td></a>
-                </tr> -->
                 <tr>
                     <td>first Name</td>
                     <td>last name</td>
@@ -31,22 +19,29 @@
                     <td>pin</td>
                     <td>bus</td>
                 </tr>
+                {% for objects in data %}
                 <tr>
-                    <td>vaishnav</td>
-                    <td>p</td>
-                    <td>99999999999</td>
-                    <td>calicut</td>
-                    <td>westthill</td>
-                    <td>673104</td>
-                    <td>kl9393</td>
-                    <td>delete</td>
+                    <td>{{ objects.FirstName }}</td>
+                    <td> {{ objects.LastName }} </td>
+                    <td>{{ objects.Contact }}</td>
+                    <td>{{ objects.Place }}</td>
+                    <td>{{ objects.Post }}</td>
+                    <td>{{ objects.pin }}</td>
+                    <td>{{ objects.bus }}</td>
+                    <td>
+                        <button>
+                            Delete
+                        </button>
+                    </td>
                 </tr>
-                <td colspan="10" align="center">
-                    <a href="/addconductor" >
-                    <input type="button" value="add">
-                   </a>
-                </td>
-
+                {% endfor %}
+                <tr>
+                    <td colspan="10" align="center">
+                        <a href="/addconductor" >
+                        <input type="button" value="add">
+                       </a>
+                    </td>
+                </tr>
             </table>
         </form>
     </header>
