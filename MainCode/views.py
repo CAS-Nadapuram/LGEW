@@ -38,13 +38,16 @@ def addconductor(request):
         LastName = request.POST['lastname']
         Place = request.POST['place']
         Post = request.POST['post']
+        Contact = request.POST['contact']
         Pin = request.POST['pin']
         Bus = request.POST['bus']
         Username = request.POST['username']
         Password = request.POST['password']
-        print(FirstName, LastName, Place, Post, Pin, Bus, Username, Password)
-        Conductor.objects.create(FirstName=FirstName, LastName=LastName, Place=Place,
-                                 Post=Post, pin=Pin, Bus=Bus, Contact=0000000)
+        # Conductor.objects.create(
+        #     FirstName=FirstName, LastName=LastName, Place=Place,
+        #     Post=Post, Pin=Pin, Bus=Bus, Contact=Contact
+        # )
+        Login.objects.create(Username = Username, Password = Password, Type="conductor")
     return render(request, "AddConductor.html")
 
 
@@ -81,18 +84,20 @@ def AddStop(request):
               )
     return render(request, "AddStop.html")
 
+
 def conductor(request):
     object = Conductor.objects.all()
-    print(object, "====================")
     return render(request, "conductor.html", {"data": object})
 
 
 def feedback(request):
-    return render(request, "feedback.html")
+    feedback = Feedback.objects.all()
+    # print(feedback.User_id)
+    return render(request, "feedback.html", {'feedbacks': feedback})
 
 
-def login1(request):
-    return render(request, "login.html")
+# def login1(request):
+#     return render(request, "login.html")
 
 
 def passenger(request):
@@ -119,4 +124,9 @@ def stopdetails(request):
 
 
 def track(request):
+    if request.method == "POST":
+        BusNumber = request.POST['BusNumber']
+        print(BusNumber)
+    else:
+        pass
     return render(request, "track.html")

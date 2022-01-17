@@ -11,15 +11,19 @@
         <form action="">
             <table>
                 <tr>
-                    <td>username</td>
+                    <td>name</td>
                     <td>feedback</td>
                     <td>date</td>
                 </tr>
+                {% for feedback in feedbacks %}
                 <tr>
-                    <td>ddff</td>
-                    <td>ddff</td>
-                    <td>ddff</td>
+                    <td>
+                        {{ feedback.User_id.loginid }}
+                    </td>
+                    <td>{{ feedback.Feedback }}</td>
+                    <td>{{ feedback.Date }}</td>
                 </tr>
+            {% endfor %}
             </table>
         </form>
     </header>

@@ -8,13 +8,16 @@
 </head>
 <body>
     <header>
-        <form action="">
+        <form action="" method="post">
+            {% csrf_token %}
             <table>
                 <tr>
                     <td>bus</td>
                     <td>
-                        <select name="" id="">
-                            <option value="">Kl10n123</option>
+                        <select name="BusNumber" id="">
+                            <option value="Kl10n123">Kl10n123</option>
+                            <option value="Kl10n163">Kl10n123</option>
+                            <option value="Kl10n133">Kl10n123</option>
                         </select>
                     </td>
                 </tr>
