@@ -51,7 +51,14 @@
             </tr>
             <tr>
               <td><label for="">bus</label></td>
-              <td><input type="text" name="bus"/></td>
+              <td>
+                <select name="bus">
+                    <option value="">Select</option>
+                    {% for i in data %}
+                    <option value="{{i.BusId}}"> {{i.BusRegisterNUmber}}</option>
+                    {% endfor %}
+                </select>
+              </td>
             </tr>
             <tr>
               <td><label for="">username</label></td>

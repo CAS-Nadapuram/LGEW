@@ -8,17 +8,19 @@
 </head>
 <body>
     <header>
-        <form action="">
-            <table>
+        <form action="/routeadd">
+            <table border="1">
                 <tr>
                     <td>starting stop</td>
-                    <td colspan="2" align="center">Ending stop</td>
+                    <td  align="center">Ending stop</td><td></td>
                 </tr>
+               {% for i in data %}
                 <tr>
-                    <td>calicut</td>
-                    <td>kondkotty</td>
-                    <td>delete</td>
+                    <td> {{i.StartingStop}} </td>
+                    <td>{{i.EndingStop}}</td>
+                    <td><a href="deleteroute/{{i.RouteId}}">Delete</a></td>
                 </tr>
+                {% endfor %}
                 <tr>
                     <td colspan="3" align="center"><input type="submit" value="add"></td>
                 </tr>

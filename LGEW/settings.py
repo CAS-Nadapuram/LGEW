@@ -78,12 +78,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'LGEW',
-        'HOST':'localhost',
-        'PORT':'3308',
-        # 'PASSWORD' : '1234567890',
-        # 'USER' : 'root',
-        'PASSWORD' : 'vishnu',
-        'USER' : 'vaishnav',
+        'HOST': 'localhost',
+        'PORT': '3308',
+        'PASSWORD': 'vishnu',
+        'USER': 'vaishnav',
     }
 }
 

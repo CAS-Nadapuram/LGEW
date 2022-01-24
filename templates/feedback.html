@@ -18,7 +18,7 @@
                 {% for feedback in feedbacks %}
                 <tr>
                     <td>
-                        {{ feedback.User_id.loginid }}
+                        {{ feedback.User_id.FirstName }} {{ feedback.User_id.LastName }}
                     </td>
                     <td>{{ feedback.Feedback }}</td>
                     <td>{{ feedback.Date }}</td>

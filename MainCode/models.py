@@ -16,11 +16,16 @@ class Passenger(models.Model):
     Post = models.CharField(max_length=20, null=True)
     pin = models.BigIntegerField(null=True)
 
+class Route(models.Model):
+     RouteId=models.AutoField(primary_key=True)
+     StartingStop=models.CharField(max_length=50)
+     EndingStop=models.CharField(max_length=50)
+     
 class BusRegister(models.Model):
     BusId = models.AutoField(primary_key=True)
     BusRegisterNUmber = models.CharField(max_length=40)
     SeatCapacity = models.IntegerField()
-    RouteId = models.IntegerField()
+    RouteId = models.ForeignKey(Route,on_delete=models.CASCADE)
 
 class Conductor(models.Model):
     UserId = models.AutoField(primary_key=True)
@@ -51,11 +56,6 @@ class BusLocation(models.Model):
     BusId = models.ForeignKey(BusRegister, on_delete=models.CASCADE)
     Latitude = models.FloatField()
     Longitude = models.FloatField()
-
-class Route(models.Model):
-     RouteId=models.AutoField(primary_key=True)
-     StartingStop=models.CharField(max_length=50)
-     EndingStop=models.CharField(max_length=50)
 
 class BusStop(models.Model):
     StopId = models.AutoField(primary_key=True)

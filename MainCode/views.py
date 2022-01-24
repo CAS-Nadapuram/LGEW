@@ -43,14 +43,29 @@ def addconductor(request):
         Bus = request.POST['bus']
         Username = request.POST['username']
         Password = request.POST['password']
-        # Conductor.objects.create(
-        #     FirstName=FirstName, LastName=LastName, Place=Place,
-        #     Post=Post, Pin=Pin, Bus=Bus, Contact=Contact
-        # )
-        Login.objects.create(Username = Username, Password = Password, Type="conductor")
-    return render(request, "AddConductor.html")
+        ob=Login.objects.create(Username = Username, Password = Password, Type="conductor")
+        bob=BusRegister.objects.get(BusId=Bus)
+        Conductor.objects.create(
+            FirstName=FirstName, LastName=LastName, Place=Place,
+            Post=Post, pin=Pin, Bus=bob, Contact=Contact,lid=ob
+        )
+    ob=BusRegister.objects.all()
+    return render(request, "AddConductor.html",{"data":ob})
 
 
+
+def deleteconductor(request,id):
+    obc=Conductor.objects.get(UserId=id)
+    lob=Login.objects.get(UserId=obc.lid.UserId)
+   
+    obc.delete()
+    lob.delete()
+    return redirect('/conductor')
+
+def deleteroute(request,id):
+    obc = Route.objects.get(RouteId=id)
+    obc.delete()
+    return redirect("/route")
 def busmanagement_add(request):
     if request.method == "POST":
         RegisterNUmber = request.POST['register_number']
@@ -104,18 +119,21 @@ def passenger(request):
     return render(request, "passenger.html")
 
 
-def Route(request):
-    return render(request, "Route.html")
+def Routee(request):
+    ob=Route.objects.all()
+    return render(request, "Route.html",{"data":ob})
 
 
 def RouteAdd(request):
-    if request.method == "GET":
-        StartingStop = request.GET['StartingStop']
-        EndingStop = request.GET['EndingStop']
-        print(
-            "\n Starting stop = ", StartingStop,
-            "\n Ending stop = ", EndingStop,
-        )
+    if request.method == "POST":
+        StartingStop = request.POST['StartingStop']
+        EndingStop = request.POST['EndingStop']
+        rob=Route()
+        rob.StartingStop=StartingStop
+        rob.EndingStop=EndingStop
+        rob.save()
+        return redirect('/route')
+       
     return render(request, "RouteAdd.html")
 
 
