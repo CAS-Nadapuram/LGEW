@@ -29,8 +29,8 @@ def AddBusTime(request):
 
 
 def busmanagement(request):
-    return render(request, "busManagement.html")
-
+    BusReg = BusRegister.objects.all()
+    return render(request, "busManagement.html", { "busreg" : BusReg })
 
 def addconductor(request):
     if request.method == "POST":
@@ -43,41 +43,44 @@ def addconductor(request):
         Bus = request.POST['bus']
         Username = request.POST['username']
         Password = request.POST['password']
-        ob=Login.objects.create(Username = Username, Password = Password, Type="conductor")
-        bob=BusRegister.objects.get(BusId=Bus)
+        ob = Login.objects.create(
+            Username=Username, Password=Password, Type="conductor")
+        bob = BusRegister.objects.get(BusId=Bus)
         Conductor.objects.create(
             FirstName=FirstName, LastName=LastName, Place=Place,
-            Post=Post, pin=Pin, Bus=bob, Contact=Contact,lid=ob
+            Post=Post, pin=Pin, Bus=bob, Contact=Contact, lid=ob
         )
-    ob=BusRegister.objects.all()
-    return render(request, "AddConductor.html",{"data":ob})
+    ob = BusRegister.objects.all()
+    return render(request, "AddConductor.html", {"data": ob})
 
 
-
-def deleteconductor(request,id):
-    obc=Conductor.objects.get(UserId=id)
-    lob=Login.objects.get(UserId=obc.lid.UserId)
-   
+def deleteconductor(request, id):
+    obc = Conductor.objects.get(UserId=id)
+    lob = Login.objects.get(UserId=obc.lid.UserId)
     obc.delete()
     lob.delete()
     return redirect('/conductor')
 
-def deleteroute(request,id):
+
+def deleteroute(request, id):
     obc = Route.objects.get(RouteId=id)
     obc.delete()
     return redirect("/route")
+
+
 def busmanagement_add(request):
     if request.method == "POST":
         RegisterNUmber = request.POST['register_number']
         Route = request.POST['route']
         NumberOfSeats = request.POST['NumberOfSeats']
-        print(
-            "register number = ", RegisterNUmber,
-            "\n Route = ",  Route,
-            "\n number of seats = ", NumberOfSeats
+        # dbroute = Route.abjects.create()
+        BusRegister.objects.create(
+            BusRegisterNUmber=RegisterNUmber,
+            SeatCapacity=NumberOfSeats,
+            
         )
 
-    return render(request, "BusManagement-add.html")
+    return render(request, "BusManagement-add.html",{{ ''}})
 
 
 def bustime(request):
@@ -107,12 +110,7 @@ def conductor(request):
 
 def feedback(request):
     feedback = Feedback.objects.all()
-    # print(feedback.User_id)
     return render(request, "feedback.html", {'feedbacks': feedback})
-
-
-# def login1(request):
-#     return render(request, "login.html")
 
 
 def passenger(request):
@@ -120,20 +118,20 @@ def passenger(request):
 
 
 def Routee(request):
-    ob=Route.objects.all()
-    return render(request, "Route.html",{"data":ob})
+    ob = Route.objects.all()
+    return render(request, "Route.html", {"data": ob})
 
 
 def RouteAdd(request):
     if request.method == "POST":
         StartingStop = request.POST['StartingStop']
         EndingStop = request.POST['EndingStop']
-        rob=Route()
-        rob.StartingStop=StartingStop
-        rob.EndingStop=EndingStop
+        rob = Route()
+        rob.StartingStop = StartingStop
+        rob.EndingStop = EndingStop
         rob.save()
         return redirect('/route')
-       
+
     return render(request, "RouteAdd.html")
 
 
