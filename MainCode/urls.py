@@ -10,7 +10,7 @@ urlpatterns = [
     path('busmanagement_add', views.busmanagement_add),
     path('bustime', views.bustime),
     path('addstop', views.AddStop),
-    path('conductor', views.conductor,name="Conductor"),
+    path('conductor', views.conductor, name="Conductor"),
     path('feedback', views.feedback),
     path('login', views.main),
     path('passenger', views.passenger),
@@ -18,6 +18,7 @@ urlpatterns = [
     path('routeadd', views.RouteAdd),
     path('stopdetails', views.stopdetails),
     path('track', views.track),
-    path('deleteconductor/<int:id>',views.deleteconductor,name="deleteconductor"),
-    path('deleteroute/<int:id>',views.deleteroute,name="deleteroute")
+    path('deleteconductor/<int:id>', views.deleteconductor, name="deleteconductor"),
+    path('deleteroute/<int:id>', views.deleteroute, name="deleteroute"),
+    path('deletebus/<str:id>', views.deletebus, name="deletebus"),
 ]

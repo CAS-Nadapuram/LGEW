@@ -50,6 +50,7 @@ def addconductor(request):
             FirstName=FirstName, LastName=LastName, Place=Place,
             Post=Post, pin=Pin, Bus=bob, Contact=Contact, lid=ob
         )
+        return redirect('/conductor')
     ob = BusRegister.objects.all()
     return render(request, "AddConductor.html", {"data": ob})
 
@@ -80,7 +81,7 @@ def busmanagement_add(request):
             
         )
 
-    return render(request, "BusManagement-add.html",{{ ''}})
+    return render(request, "BusManagement-add.html")
 
 
 def bustime(request):
@@ -107,6 +108,10 @@ def conductor(request):
     object = Conductor.objects.all()
     return render(request, "conductor.html", {"data": object})
 
+def deletebus(request, id):
+    busdetail = BusRegister.objects.get(BusRegisterNUmber=id)
+    busdetail.delete()
+    return redirect('/busmanagement')
 
 def feedback(request):
     feedback = Feedback.objects.all()
