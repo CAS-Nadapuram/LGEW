@@ -35,9 +35,11 @@
               <td>Route</td>
               <td>
                 <select name="route">
-                  <option value="vatakara">vatakara</option>
-                  <option value="kozhikode">kozhikode</option>
-                  <option value="kannur">kannur</option>
+                  {% for routes in route %}
+                    <option value="{{ routes.RouteId.StartingStop }} - {{ routes.RouteId.EndingStop }}">
+                      {{ routes.RouteId.StartingStop }} - {{ routes.RouteId.EndingStop }}
+                    </option>
+                  {% endfor %}
                 </select>
               </td>
             </tr>

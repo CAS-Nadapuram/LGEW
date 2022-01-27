@@ -9,7 +9,7 @@ def main(request):
     if request.method == "POST":
         Username = request.POST['username']
         Password = request.POST['password']
-        user = Login.objects.filter(Username=Username, Password=Password)
+        user = Login.objects.filter(Username=Username, Password=Password, Type="admin")
         if len(user) == 0:
             messages.error(request, "invalid user")
             return redirect("/")
@@ -70,18 +70,18 @@ def deleteroute(request, id):
 
 
 def busmanagement_add(request):
+    BusReg = BusRegister.objects.all()
     if request.method == "POST":
         RegisterNUmber = request.POST['register_number']
         Route = request.POST['route']
         NumberOfSeats = request.POST['NumberOfSeats']
-        # dbroute = Route.abjects.create()
-        BusRegister.objects.create(
-            BusRegisterNUmber=RegisterNUmber,
-            SeatCapacity=NumberOfSeats,
+        # BusRegister.objects.create(
+        #     BusRegisterNUmber=RegisterNUmber,
+        #     SeatCapacity=NumberOfSeats,
             
-        )
+        # )
 
-    return render(request, "BusManagement-add.html")
+    return render(request, "BusManagement-add.html",{ "route" : BusReg})
 
 
 def bustime(request):
