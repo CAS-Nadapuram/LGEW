@@ -1,55 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
   <body>
-    <table>
-      <tr>
-          <td><a href="/">  Home</td></a>
-          <td><a href="/conductor">  Conductor Details</td></a>
-          <td><a href="/busmanagement">  Bus Management</td></a>
-          <td><a href="/route">  Route</td></a>
-          <td><a href="/stopdetails">  stop details</td></a>
-          <td><a href="/bustime">  Bus time</td></a>
-          <td><a href="/feedback">  feedback</td></a>
-          <td><a href="/passenger">  Passanger</td></a>
-          <td><a href="/track">  track bus</td></a>
-          <td><a href="/">  logout</td></a>
-      </tr>
-  </table>
-</header>
-    <div class="header">
-      <form method="post" action="">
-        <table border="0">
-          <tr>
-            <td>
-              <label for="stop">Stop</label>
-            </td>
-            <td>
-              <select name="stop" id="">
-                <option value="kozhikode">kozhikode</option>
-                <option value="">vatakara</option>
-                <option value="">Nad</option>
-              </select>
-            </td>
-          </tr>
-          <tr>
+    <div class="main-container">
+      <table class="Navbar">
+        <tr>
+            <td><a href="/adminhome">  Home</td></a>
+            <td><a href="/conductor">  Conductor Details</td></a>
+            <td><a href="/busmanagement">  Bus Management</td></a>
+            <td><a href="/route">  Route</td></a>
+            <td><a href="/stopdetails">  stop details</td></a>
+            <td><a href="/bustime">  Bus time</td></a>
+            <td><a href="/feedback">  feedback</td></a>
+            <td><a href="/passenger">  Passanger</td></a>
+            <td><a href="/track">  track bus</td></a>
+            <td><a href="/">  logout</td></a>
+        </tr>
+    </table>
+  </header>
+      <div class="header">
+        <form method="post" action="">
+          <table border="0">
+            <tr>
               <td>
-                <label for="time">Time</label>
-            </td>
-            <td>
-                <input type="time" name="" id="" />
-            </td>
-          </tr>
-          <tr>
-              <td  colspan="2" align="center"><input type="button" value="add" /></td>
-          </tr>
-        </table>
-      </form>
+                <label for="stop">Stop</label>
+              </td>
+              <td>
+                <select name="stop" id="">
+                  <option value="kozhikode">kozhikode</option>
+                  <option value="">vatakara</option>
+                  <option value="">Nad</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+                <td>
+                  <label for="time">Time</label>
+              </td>
+              <td>
+                  <input type="time" name="" id="" />
+              </td>
+            </tr>
+            <tr>
+                <td  colspan="2" align="center"><input type="button" value="add" /></td>
+            </tr>
+          </table>
+        </form>
+      </div>
+    </header>
     </div>
   </body>
 </html>

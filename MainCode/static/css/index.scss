@@ -1,0 +1,38 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    .main-container{
+        width: 100vw;
+        height: 100vh;
+        display: grid;
+        place-items: center;
+        grid-template-columns: 2fr 10fr;
+        .Navbar{
+
+            display: grid;
+            place-items: center;
+            border-right: 1px solid rgb(207, 202, 202);
+            tr{
+
+                align-items: right;
+                height: 90vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-around;
+                td{
+                    padding: 0 20px;
+                    display: flex;
+                    flex-direction: column;
+                    a{
+                        font-size: 25px;
+                        text-decoration: none;
+                        color: #000;
+                    }
+                }
+            }
+        }
+    }   
+}
