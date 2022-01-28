@@ -46,7 +46,7 @@
               <tr>
                 <td><label for="">Contact</label></td>
                 <td>
-                  <input type="number" name="contact"/>
+                  <input type="number" name="contact" required/>
                 </td>
               </tr>
               <tr>
@@ -63,13 +63,13 @@
               <tr>
                 <td><label for="">pin</label></td>
                 <td>
-                  <input type="number" name = "pin" />
+                  <input type="number" name = "pin" required/>
                 </td>
               </tr>
               <tr>
                 <td><label for="">bus</label></td>
                 <td>
-                  <select name="bus">
+                  <select name="bus" required>
                       <option value="">Select</option>
                       {% for i in data %}
                       <option value="{{i.BusId}}"> {{i.BusRegisterNUmber}}</option>

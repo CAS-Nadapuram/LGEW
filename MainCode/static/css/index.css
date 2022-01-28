@@ -3,6 +3,7 @@
           box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Times New Roman', Times, serif;
 }
 
 body .main-container {
@@ -50,8 +51,12 @@ body .main-container .Navbar tr td {
 }
 
 body .main-container .Navbar tr td a {
-  font-size: 25px;
+  font-size: 20px;
   text-decoration: none;
   color: #000;
+}
+
+body .main-container .Navbar tr td a:hover {
+  color: #77777c;
 }
 /*# sourceMappingURL=index.css.map */
