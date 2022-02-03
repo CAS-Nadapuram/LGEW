@@ -31,7 +31,7 @@
           <table>
             <tr>
               <td>Bus register number</td>
-              <td><input type="text" name = "register_number"/></td>
+              <td><input type="text" name = "register_number" value="{{busdetails.BusRegisterNUmber}}"/></td>
             </tr>
             <tr>
               <td>Route</td>
@@ -41,6 +41,8 @@
                     <option value="{{ routes.RouteId.StartingStop }} - {{ routes.RouteId.EndingStop }}">
                       {{ routes.RouteId.StartingStop }} - {{ routes.RouteId.EndingStop }}
                     </option>
+                    <!-- <input type="text" value="{{routes.RouteId.StartingStop }}" name="StartingStop">
+                    <input type="text" value="{{routes.RouteId.EndingStop }}" name="endingstop"> -->
                   {% endfor %}
                 </select>
               </td>
@@ -48,7 +50,7 @@
             <tr>
               <td>Number of seats</td>
               <td>
-                <input type="number" name="NumberOfSeats" id="" />
+                <input type="number" name="NumberOfSeats" id="" value="{{busdetails.SeatCapacity}}"/>
               </td>
             </tr>
             <tr>

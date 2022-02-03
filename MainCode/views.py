@@ -6,10 +6,12 @@ from .models import *
 
 
 def main(request):
+    global Username
     if request.method == "POST":
         Username = request.POST['username']
         Password = request.POST['password']
-        user = Login.objects.filter(Username=Username, Password=Password, Type="admin")
+        user = Login.objects.filter(
+            Username=Username, Password=Password, Type="admin")
         if len(user) == 0:
             messages.error(request, "invalid user")
             return redirect("/")
@@ -21,7 +23,9 @@ def main(request):
 
 
 def adminhome(request):
-    return render(request, "AdminHome.html")
+    return render(request, "AdminHome.html", 
+    # {"user": Username}
+    )
 
 
 def AddBusTime(request):
@@ -30,7 +34,15 @@ def AddBusTime(request):
 
 def busmanagement(request):
     BusReg = BusRegister.objects.all()
-    return render(request, "busManagement.html", { "busreg" : BusReg })
+    return render(request, "busManagement.html", {"busreg": BusReg})
+
+
+def updatebus(request, id):
+    BusReg = BusRegister.objects.all()
+    busdetail = BusRegister.objects.get(BusRegisterNUmber=id)
+    print(BusReg)
+    # return render(request, "BusManagement-add.html", {'busdetails' : busdetail,'route' : BusReg})
+
 
 def addconductor(request):
     if request.method == "POST":
@@ -69,19 +81,22 @@ def deleteroute(request, id):
     return redirect("/route")
 
 
-def busmanagement_add(request):
+def busmanagement_add(request,):
     BusReg = BusRegister.objects.all()
     if request.method == "POST":
         RegisterNUmber = request.POST['register_number']
-        Route = request.POST['route']
         NumberOfSeats = request.POST['NumberOfSeats']
-        # BusRegister.objects.create(
-        #     BusRegisterNUmber=RegisterNUmber,
-        #     SeatCapacity=NumberOfSeats,
-            
-        # )
-
-    return render(request, "BusManagement-add.html",{ "route" : BusReg})
+        StartingStop = request.POST['StartingStop']
+        EndingStop = request.POST['endingstop']
+        route = Route.objects.create(
+            StartingStop=StartingStop, EndingStop=EndingStop)
+        BusRegister.objects.create(
+            BusRegisterNUmber=RegisterNUmber,
+            SeatCapacity=NumberOfSeats,
+            route=route
+        )
+        redirect("//busmanagement")
+    return render(request, "BusManagement-add.html", {"route": BusReg})
 
 
 def bustime(request):
@@ -108,10 +123,12 @@ def conductor(request):
     object = Conductor.objects.all()
     return render(request, "conductor.html", {"data": object})
 
+
 def deletebus(request, id):
     busdetail = BusRegister.objects.get(BusRegisterNUmber=id)
     busdetail.delete()
     return redirect('/busmanagement')
+
 
 def feedback(request):
     feedback = Feedback.objects.all()

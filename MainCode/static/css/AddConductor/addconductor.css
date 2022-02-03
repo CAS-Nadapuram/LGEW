@@ -1,0 +1,18 @@
+body .main-container header {
+  height: 60%;
+  width: 60%;
+}
+
+body .main-container header table {
+  background-color: #e21f1f;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-grid-columns: 1fr 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+body .main-container header table tr {
+  color: green;
+}
+/*# sourceMappingURL=addconductor.css.map */

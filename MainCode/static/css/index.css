@@ -41,13 +41,6 @@ body .main-container .Navbar tr {
 
 body .main-container .Navbar tr td {
   padding: 0 20px;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
 
 body .main-container .Navbar tr td a {

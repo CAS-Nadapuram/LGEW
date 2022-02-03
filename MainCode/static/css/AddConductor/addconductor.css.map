@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAAA,AAEQ,IAFJ,CACA,eAAe,CACX,MAAM,CAAA;EACH,MAAM,EAAE,GAAG;EACX,KAAK,EAAE,GAAG;CASZ;;AAbT,AAKW,IALP,CACA,eAAe,CACX,MAAM,CAGH,KAAK,CAAA;EACD,gBAAgB,EAAE,OAAO;EACzB,OAAO,EAAE,IAAI;EACb,qBAAqB,EAAE,eAAe;CAIzC;;AAZZ,AASe,IATX,CACA,eAAe,CACX,MAAM,CAGH,KAAK,CAID,EAAE,CAAA;EACE,KAAK,EAAE,KAAK;CACf",
+    "sources": [
+        "addconductor.scss"
+    ],
+    "names": [],
+    "file": "addconductor.css"
+}

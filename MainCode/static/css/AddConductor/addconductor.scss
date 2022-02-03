@@ -1,0 +1,16 @@
+body{
+    .main-container{
+        header{
+           height: 60%;
+           width: 60%;
+           table{
+               background-color: #e21f1f;
+               display: flex;
+               grid-template-columns: 1fr 1fr 1fr 1fr;
+               tr{
+                   color: green;
+               }
+           }
+        }
+    }   
+}

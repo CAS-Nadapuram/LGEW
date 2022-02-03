@@ -23,14 +23,12 @@ body{
                 justify-content: space-around;
                 td{
                     padding: 0 20px;
-                    display: flex;
-                    flex-direction: column;
                     a{
                         font-size: 20px;
                         text-decoration: none;
                         color: #000;
-                        &:hover{
-                            // font-size: 21px;
+                        &:hover
+                        {
                             color: rgb(119, 119, 124);
                         }
                     }

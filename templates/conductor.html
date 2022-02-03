@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/Conductor/conductor.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,21 +24,20 @@
             <td><a href="/">  logout</td></a>
         </tr>
     </table>
-</header>
-    <header>
+<header>
         <form action="">
             <table border="1">
                 <tr>
-                    <td>first Name</td>
-                    <td>last name</td>
-                    <td>contact</td>
-                    <td>place</td>
-                    <td>Post</td>
-                    <td>pin</td>
-                    <td>bus</td>
+                    <th>first Name</th>
+                    <th>last name</th>
+                    <th>contact</th>
+                    <th>place</th>
+                    <th>Post</th>
+                    <th>pin</th>
+                    <th>bus</th>
                 </tr>
                 {% for i in data %}
-                <tr>
+                <tr class="alldata">
                     <td> {{i.FirstName}} </td>
                     <td>{{ i.LastName }}</td>
                     <td> {{ i.Contact }}</td>
@@ -46,7 +46,7 @@
                     <td>{{ i.pin }}</td>
                     <td>{{i.Bus.BusRegisterNUmber}}</td>
                     <td>
-                        <a href="deleteconductor/{{i.UserId}}">Delete</a>
+                        <a href="deleteconductor/{{i.UserId}}">D</a>
                         {% comment %} <a href="{% url 'deleteconductor' id=i.UserId %}">Delete</a> {% endcomment %}
                     </td>
                 </tr>
