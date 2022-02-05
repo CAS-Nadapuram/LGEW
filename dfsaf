@@ -1,0 +1,144 @@
+[33mcommit ab7ad7f02590f7cb1d6cdc78fee4fc7ef596e508[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: Vaishnav <vrv.mee@gmail.com>
+Date:   Sun Feb 6 01:56:26 2022 +0530
+
+    vscode://vscode.github-authentication/did-authenticate?windowid=1&code=a9723e20dc46ad9555dd&state=a769a6fb-5940-4f3f-81eb-b4392067ae03
+
+[33mcommit 2896b372360dc5a0df5bfe9737e6b365ea17db5d[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morg/main[m[33m)[m
+Author: Vaishnav <vrv.mee@gmail.com>
+Date:   Fri Feb 4 01:26:46 2022 +0530
+
+    added style to feedbak conductor
+
+[33mcommit e7c571119fc5dd679e9dfb326aec4b59a6d5f47b[m
+Author: Vaishnav <vrv.mee@gmail.com>
+Date:   Fri Jan 28 18:57:39 2022 +0530
+
+    updated navbar
+
+[33mcommit 55ba6606e2aded3962cdd8dca9a0601f3a14dc83[m
+Author: Vaishnav <vrv.mee@gmail.com>
+Date:   Fri Jan 28 03:11:51 2022 +0530
+
+    added style to navbar
+
+[33mcommit a08ba268cdb31690bba014d1019b1312cbfebe9b[m
+Author: Vaishnav <vrv.mee@gmail.com>
+Date:   Thu Jan 27 20:06:11 2022 +0530
+
+    updates in bus management
+
+[33mcommit 60cbf1efcb5a862fd4eca8fe9d674565f39e178b[m
+Author: Vaishnav <vrv.mee@gmail.com>
+Date:   Tue Jan 25 19:48:37 2022 +0530
+
+    added nav in all pages and bus management fixed
+
+[33mcommit c057d11c1a65d6e77c92f633eb6d177aafb5fd7b[m
+Author: Vaishnav <vrv.mee@gmail.com>
+Date:   Tue Jan 25 02:06:15 2022 +0530
+
+    conductor and bus management fixed
+
+[33mcommit a9ea293992176873e6edc72077fcc977f000365b[m
+Author: Vyshnav vishnu <69909416+vrv-vyshnav@users.noreply.github.com>
+Date:   Mon Jan 24 21:27:33 2022 +0530
+
+    Update README.md
+
+[33mcommit 52dffef0e5da991b1021c9f5ed27a70babcb83f2[m
+Author: Vyshnav vishnu <69909416+vrv-vyshnav@users.noreply.github.com>
+Date:   Mon Jan 24 14:34:45 2022 +0530
+
+    Update README.md
+
+[33mcommit 250683f13de0c0d5d82287c66c0783dceade63e5[m
+Author: Vaishnav <vrv.mee@gmail.com>
+Date:   Mon Jan 24 13:47:40 2022 +0530
+
+    updates in models and views
+
+[33mcommit 0b3434a21d11c392fb59f183f8bf4bfd60487e46[m
+Author: Vaishnav <vrv.mee@gmail.com>
+Date:   Tue Jan 18 00:14:20 2022 +0530
+
+    updated add conductor
+
+[33mcommit 398549512b8797b4322bf4353bff14f7e726fb0a[m
+Author: Vaishnav <vrv.mee@gmail.com>
+Date:   Mon Jan 10 01:28:21 2022 +0530
+
+    updated models login validation worked
+
+[33mcommit fd78bb2505e7371fa987304bac58b11ee42afe37[m
+Author: Vaishnav <vrv.mee@gmail.com>
+Date:   Sat Jan 8 01:10:26 2022 +0530
+
+    conductor and passanger are connected to db
+
+[33mcommit 5f97b4ea7e7ef65f94c29b069f40ddf862363183[m
+Author: Vaishnav <vrv.mee@gmail.com>
+Date:   Thu Jan 6 00:38:49 2022 +0530
+
+    update in addconductor
+
+[33mcommit 0d67edd85cf1006f6fcd49cf0c1880774462349e[m
+Author: Vaishnav <vrv.mee@gmail.com>
+Date:   Tue Jan 4 22:57:19 2022 +0530
+
+    login successfully
+
+[33mcommit bf0fe2393c86a692fa0349e6b037b09e8c19aa44[m
+Author: Vaishnav <vrv.mee@gmail.com>
+Date:   Thu Dec 30 02:24:01 2021 +0530
+
+    fetch values from login , bus management add ,add stop and route add
+
+[33mcommit 98be35ec858f8a4debdea0c3baa101edefc02cb0[m
+Author: Vaishnav <vrv.mee@gmail.com>
+Date:   Wed Dec 29 02:13:48 2021 +0530
+
+    database connected and update in views
+
+[33mcommit f2a1d495512d72a6321a9c8f1f2a167c91130b2c[m
+Merge: 33fbe2b 1c617eb
+Author: Vaishnav <vrv.mee@gmail.com>
+Date:   Tue Dec 28 03:15:19 2021 +0530
+
+    Merge branch 'main' of https://github.com/vrv-vyshnav/LetsGoEveryWhere into main
+
+[33mcommit 33fbe2b7612d9ab203c3fcd8a2375de568674bc4[m
+Author: Vaishnav <vrv.mee@gmail.com>
+Date:   Tue Dec 28 03:14:38 2021 +0530
+
+    some updates in settings
+
+[33mcommit 1c617ebf2a050554009ce16e27c0175ddf8c1330[m
+Author: Vyshnav vishnu <69909416+vrv-vyshnav@users.noreply.github.com>
+Date:   Tue Dec 7 16:39:59 2021 +0530
+
+    Create README.md
+
+[33mcommit 681f35a4805bbaf702ec16fe941694db39ce7aaf[m
+Author: Vaishnav <vrv.mee@gmail.com>
+Date:   Tue Dec 7 16:37:02 2021 +0530
+
+    some error fixed
+
+[33mcommit 6a28d47971e15e1908ab9431357eac226e37f510[m
+Author: Vaishnav <vrv.mee@gmail.com>
+Date:   Tue Dec 7 16:35:02 2021 +0530
+
+    added templete and form
+
+[33mcommit b5693a2cf4da6e822602359b20b2140e0016e55e[m
+Author: Vaishnav <vrv.mee@gmail.com>
+Date:   Thu Nov 4 14:00:02 2021 +0530
+
+    fix some error
+
+[33mcommit fddf86d9d0930ec4b881b5afe4dfa7af4c6426f1[m
+Author: Anaswara <anaswarambabu@gmail.com>
+Date:   Tue Oct 26 13:15:25 2021 +0530
+
+    first commit
