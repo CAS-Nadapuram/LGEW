@@ -2,6 +2,8 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+    <script src="https://kit.fontawesome.com/f5ca60cca4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/Conductor/conductor.css">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,27 +25,33 @@
             <td><a href="/">  logout</td></a>
         </tr>
     </table>
-</header>
+<div class="table-container">
     <header>
         <form action="/routeadd">
             <table border="1">
                 <tr>
-                    <td>starting stop</td>
-                    <td  align="center">Ending stop</td><td></td>
+                    <th>starting stop</th>
+                    <th  align="center">Ending stop</th><td></td>
                 </tr>
                {% for i in data %}
                 <tr>
                     <td> {{i.StartingStop}} </td>
                     <td>{{i.EndingStop}}</td>
-                    <td><a href="deleteroute/{{i.RouteId}}">Delete</a></td>
+                    <td align="center"><a href="deleteroute/{{i.RouteId}}">
+                        <i class="fas fa-trash" style="color: rgb(235, 38, 38);"></i>
+                    </a></td>
                 </tr>
                 {% endfor %}
                 <tr>
-                    <td colspan="3" align="center"><input type="submit" value="add"></td>
+                    <td colspan="3" align="center"></td>
                 </tr>
             </table>
-        </form>
-    </header>
+        </header>
+        <div class="add">
+        <input type="submit" value="add">
+    </div>
+    </form>
+</div>
  </div>
 </body>
 </html>

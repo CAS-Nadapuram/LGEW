@@ -1,10 +1,12 @@
 header{
     max-height: 80%;
     width: 80%;
-    // background: red;
+    background-color: #fff;
     scroll-margin-bottom: none;
-    overflow: hidden;
-    
+    overflow: scroll;
+    border-bottom: 1px solid rgb(226, 221, 221);
+    border-left: 1px dotted rgb(238, 231, 231);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     table{
         width: 100%;
         height: 10px;

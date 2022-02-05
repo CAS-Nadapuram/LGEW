@@ -2,6 +2,9 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+    <script src="https://kit.fontawesome.com/f5ca60cca4.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="/static/css/BusManagement/busmanagement.css"> -->
+    <link rel="stylesheet" type="text/css" href="/static/css/Conductor/conductor.css">
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -23,36 +26,41 @@
             <td><a href="/">  logout</td></a>
         </tr>
     </table>
-  </header>
+    <div class="table-container">
       <header>
         <form action="">
           <table>
             <tr>
-              <td>Bus register number</td>
-              <td>seat</td>
-              <td>route</td>
+              <th>Bus register number</th>
+              <th>seat</th>
+              <th>route</th>
             </tr>
             {% for data in busreg %}
             <tr>
               <td>{{ data.BusRegisterNUmber }}</td>
               <td>{{ data.SeatCapacity }}</td>
               <td>{{ data.RouteId.StartingStop }} - {{ data.RouteId.EndingStop }}</td>
-              <td>
-                <a href="updatebus/{{ data.BusRegisterNUmber }}">edit</a>
-                <a href="deletebus/{{ data.BusRegisterNUmber }}">delete</a>
+              <td align="center">
+                <a href="deletebus/{{ data.BusRegisterNUmber }}">
+                  <i class="fas fa-trash" style="color: rgb(235, 38, 38);"></i>
+                </a>
               </td>
-            </tr>
-            {% endfor %}
-            <tr>
-              <td>
-                <a href="/busmanagement_add">
-                  <input type="button" value="add" />
+              <td align="center">
+                <a href="updatebus/{{ data.BusRegisterNUmber }}">
+                  <i class="fas fa-pencil-alt" style="color:rgb(24, 21, 216)"></i>
                 </a>
               </td>
             </tr>
+            {% endfor %}
           </table>
         </form>
       </header>
+        <div class="add">
+          <a href="/busmanagement_add">
+            <input type="button" value="add" />
+          </a>
+        </div>
+    </div>
     </div>
   </body>
 </html>

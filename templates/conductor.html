@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://kit.fontawesome.com/f5ca60cca4.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" type="text/css" href="/static/css/index.css">
     <link rel="stylesheet" type="text/css" href="/static/css/Conductor/conductor.css">
     <meta charset="UTF-8">
@@ -24,7 +25,8 @@
             <td><a href="/">  logout</td></a>
         </tr>
     </table>
-<header>
+<div class="table-container">
+    <header>
         <form action="">
             <table border="1">
                 <tr>
@@ -46,22 +48,20 @@
                     <td>{{ i.pin }}</td>
                     <td>{{i.Bus.BusRegisterNUmber}}</td>
                     <td>
-                        <a href="deleteconductor/{{i.UserId}}">D</a>
-                        {% comment %} <a href="{% url 'deleteconductor' id=i.UserId %}">Delete</a> {% endcomment %}
+                        <a href="deleteconductor/{{i.UserId}}"><i class="fas fa-trash" style="color: rgb(235, 38, 38);"></i></a>
+                        <!-- {% comment %} <a href="{% url 'deleteconductor' id=i.UserId %}">Delete</a> {% endcomment %} -->
                     </td>
                 </tr>
-                {% endfor %}
-                <tr>
-                <td colspan="10" align="center">
-                    <a href="/addconductor" >
-                    <input type="button" value="add">
-                   </a>
-                </td>
-                </tr>
-                
+                {% endfor %}                
             </table>
         </form>
     </header>
+    <div class="add">
+        <a  href="/addconductor" >
+            <input type="button" value="add">
+        </a>
+    </div>
+</div>
    </div>
 </body>
 </html>
