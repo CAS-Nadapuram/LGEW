@@ -1,16 +1,15 @@
-body{
-    .main-container{
-        header{
-           height: 60%;
-           width: 60%;
-           table{
-               background-color: #e21f1f;
-               display: flex;
-               grid-template-columns: 1fr 1fr 1fr 1fr;
-               tr{
-                   color: green;
-               }
-           }
-        }
-    }   
+header{
+    width: 80%;
+    background-color: #fff;
+    scroll-margin-bottom: none;
+    overflow: scroll;
+    border-bottom: 1px solid rgb(226, 221, 221);
+    border-left: 1px dotted rgb(238, 231, 231);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    table{
+        width: 100%;
+        background-color: green;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
 }

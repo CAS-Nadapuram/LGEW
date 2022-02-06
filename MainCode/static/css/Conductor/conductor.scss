@@ -1,7 +1,9 @@
 .table-container{
     width: 80%;
     height: 76%;
+
     header{
+        // position: absolute;
         max-height: 100%;
         width: 100%;
         background-color: #fff;
@@ -18,8 +20,8 @@
             border: none;
             box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
             th{
-                position: sticky;
-                top: 0;
+                // position: sticky;
+                // top: 0;
                 text-transform: uppercase;
                 padding: 0 0 0 5px;
                 text-align: left;
@@ -29,8 +31,8 @@
             td{
                     overflow-x:auto;
                     border: none;
-                    border-bottom: 1px solid gray;
-                    padding: 15px 10px;
+                    border-bottom: 1px dotted gray;
+                    padding: 15PX 10PX;
                     font-weight: 300;
                     font-size: 18px;
             }

@@ -104,19 +104,19 @@ def bustime(request):
 
 
 def AddStop(request):
+    ob = BusRegister.objects.all()
     if request.method == "POST":
         Bus = request.POST['Bus']
         Stop = request.POST['Stop']
         Latitude = request.POST['Latitude']
         Longitude = request.POST['Longitude']
         TicketCharge = request.POST['TicketCharge']
-        print("\n Bus = ", Bus,
-              "\n stop = ", Stop,
-              "\n Latitude = ", Latitude,
-              "\n longitude = ", Longitude,
-              "\n Ticket charge = ", TicketCharge,
-              )
-    return render(request, "AddStop.html")
+
+        routes = BusRegister.objects.get(RouteId = bus )
+        BusStop.objects.create(RouteId =  routes, stop = Stop, Latitude = Latitude, Longitude = Longitude
+        , TicketCharge = TicketCharge)
+        redirect("/stopdetails")
+    return render(request, "AddStop.html",{'busregisters': ob})
 
 
 def conductor(request):
@@ -157,8 +157,11 @@ def RouteAdd(request):
     return render(request, "RouteAdd.html")
 
 
+    
 def stopdetails(request):
-    return render(request, "stopdetails.html")
+    ob = BusRegister.objects.all()
+    print(ob)
+    return render(request, "stopdetails.html",{'busregister' : ob})
 
 
 def track(request):

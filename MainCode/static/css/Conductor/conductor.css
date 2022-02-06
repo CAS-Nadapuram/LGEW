@@ -25,9 +25,6 @@
 }
 
 .table-container header table th {
-  position: -webkit-sticky;
-  position: sticky;
-  top: 0;
   text-transform: uppercase;
   padding: 0 0 0 5px;
   text-align: left;
@@ -38,8 +35,8 @@
 .table-container header table td {
   overflow-x: auto;
   border: none;
-  border-bottom: 1px solid gray;
-  padding: 15px 10px;
+  border-bottom: 1px dotted gray;
+  padding: 15PX 10PX;
   font-weight: 300;
   font-size: 18px;
 }

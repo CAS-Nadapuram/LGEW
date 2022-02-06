@@ -25,13 +25,14 @@
     </table>
 </header>
     <header>
-        <form action="">
             <table>
                 <tr>
                     <td>bus</td>
                     <td>
                         <select name="" id="">
-                            <option value="">kl10n124</option>
+                            {% for busregisters in busregister %}
+                            <option value="{{ busregisters.BusRegisterNUmber }}">{{ busregisters.BusRegisterNUmber }}</option>
+                            {% endfor %}
                         </select>
                     </td>
                 </tr>
@@ -40,10 +41,13 @@
                     <td>ticket charge</td>
                 </tr>
                 <tr>
-                    <td colspan="3" align="center"><input type="submit" value="add"></td>
+                    <td colspan="3" align="center">
+                        <a href="/addstop">
+                            <input type="button" value="add">
+                        </a>
+                        </td>
                 </tr>
             </table>
-        </form>
     </header>
   </div>
 </body>

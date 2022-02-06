@@ -35,8 +35,9 @@
                 </td>
                 <td>
                   <select name="Bus" id="">
-                    <option value="KL18N8442">KL18N8442</option>
-                    <option value="KL18N8442">KL18N8442</option>
+                    {% for busregister in busregisters %}
+                      <option value="">{{ busregister.BusRegisterNUmber }}</option>
+                    {% endfor %}
                   </select>
                 </td>
               </tr>
