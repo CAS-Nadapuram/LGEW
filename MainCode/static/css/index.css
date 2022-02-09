@@ -12,6 +12,7 @@ body {
 }
 
 body .main-container {
+  height: 100vh;
   display: -ms-grid;
   display: grid;
   place-items: center;
@@ -41,7 +42,7 @@ body .main-container .Navbar tr {
 }
 
 body .main-container .Navbar tr td {
-  padding: 0 20px;
+  padding: 20px;
 }
 
 body .main-container .Navbar tr td a {

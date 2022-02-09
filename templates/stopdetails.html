@@ -27,16 +27,23 @@
     <header>
             <table>
                 <tr>
-                    <td>bus</td>
-                    <td>
-                        <select name="" id="">
-                            {% for busregisters in busregister %}
-                            <option value="{{ busregisters.BusRegisterNUmber }}">{{ busregisters.BusRegisterNUmber }}</option>
-                            {% endfor %}
-                        </select>
-                    </td>
+                    <form method="POST" action="">
+                    {% csrf_token %}
+                        <td>bus</td>
+                        <td>
+                            <select name="busnumber">
+                                <option value="">Select</option>
+                                {% for busregisters in busregister %}
+                                <option value="{{ busregisters.BusRegisterNUmber }}">{{ busregisters.BusRegisterNUmber }}</option>
+                                {% endfor %}
+                            </select>
+                        </td>
+                        <td>
+                            <input type="submit" value="search">
+                        </td>
+                </form>
                 </tr>
-                <tr>
+            <tr>
                     <td>stop</td>
                     <td>ticket charge</td>
                 </tr>
@@ -48,6 +55,7 @@
                         </td>
                 </tr>
             </table>
+
     </header>
   </div>
 </body>

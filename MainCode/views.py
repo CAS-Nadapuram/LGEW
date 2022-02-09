@@ -112,9 +112,9 @@ def AddStop(request):
         Longitude = request.POST['Longitude']
         TicketCharge = request.POST['TicketCharge']
 
-        routes = BusRegister.objects.get(RouteId = bus )
-        BusStop.objects.create(RouteId =  routes, stop = Stop, Latitude = Latitude, Longitude = Longitude
-        , TicketCharge = TicketCharge)
+        # routes = BusRegister.objects.get(RouteId = bus )
+        # BusStop.objects.create(RouteId =  routes, stop = Stop, Latitude = Latitude, Longitude = Longitude
+        # , TicketCharge = TicketCharge)
         redirect("/stopdetails")
     return render(request, "AddStop.html",{'busregisters': ob})
 
@@ -158,9 +158,14 @@ def RouteAdd(request):
 
 
     
-def stopdetails(request):
+def stopdetailz(request):
     ob = BusRegister.objects.all()
     print(ob)
+    if request.method == "POST":
+               Bus = request.POST['busnumber']
+               id = BusRegister.objects.get(BusRegisterNUmber = Bus )
+               busdata = BusStop.objects.filter(RouteId = id.RouteId)
+               print(busdata)
     return render(request, "stopdetails.html",{'busregister' : ob})
 
 
