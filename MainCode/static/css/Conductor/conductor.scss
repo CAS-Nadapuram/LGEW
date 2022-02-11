@@ -20,8 +20,8 @@
             border: none;
             box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
             th{
-                // position: sticky;
-                // top: 0;
+                position: sticky;
+                top: 0;
                 text-transform: uppercase;
                 padding: 0 0 0 5px;
                 text-align: left;
@@ -60,11 +60,11 @@
         -o-border-radius: 20px;
         &:hover
             {
-			box-shadow: 0 0 5px #20ca37,
-						 0 0 10px #20ca37,
-						 0 0 30px #20ca37,
-						 0 0 60px #20ca37,
-						 0 0 120px #20ca37;
+                box-shadow: 0 0 5px #20ca37,
+                0 0 10px #20ca37,
+                0 0 30px #20ca37,
+                0 0 60px #20ca37,
+                0 0 120px #20ca37;
 			background: #20ca37;
 			color: #112;
 		}

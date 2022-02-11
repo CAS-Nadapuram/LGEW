@@ -25,6 +25,9 @@
 }
 
 .table-container header table th {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
   text-transform: uppercase;
   padding: 0 0 0 5px;
   text-align: left;

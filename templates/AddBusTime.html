@@ -26,6 +26,7 @@
   </header>
       <div class="header">
         <form method="post" action="">
+          {% csrf_token %}
           <table border="0">
             <tr>
               <td>
@@ -44,11 +45,13 @@
                   <label for="time">Time</label>
               </td>
               <td>
-                  <input type="time" name="" id="" />
+                  <input type="time" name="time" id="" />
               </td>
             </tr>
-            <tr>
-                <a href="/addstop"><td  colspan="2" align="center"><input type="button" value="add" /></a></td>
+            <tr >
+                <td colspan="2" align="center">
+                  <input type="submit" value="add">
+                </td>
             </tr>
           </table>
         </form>

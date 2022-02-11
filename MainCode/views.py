@@ -29,6 +29,10 @@ def adminhome(request):
 
 
 def AddBusTime(request):
+    if request.method == "POST":
+        stop = request.POST['stop']
+        time = request.POST['time']
+        print(stop, time)
     return render(request, "AddBusTime.html")
 
 
@@ -162,10 +166,9 @@ def stopdetailz(request):
     ob = BusRegister.objects.all()
     print(ob)
     if request.method == "POST":
-               Bus = request.POST['busnumber']
-               id = BusRegister.objects.get(BusRegisterNUmber = Bus )
-               busdata = BusStop.objects.filter(RouteId = id.RouteId)
-               print(busdata)
+            Bus = request.POST['busnumber']
+            id = BusRegister.objects.get(BusRegisterNUmber = Bus)
+            # busdata = BusStop.objects.all().prefetch_related(id) 
     return render(request, "stopdetails.html",{'busregister' : ob})
 
 
