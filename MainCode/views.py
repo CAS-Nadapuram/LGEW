@@ -91,6 +91,7 @@ def busmanagement_add(request,):
         RegisterNUmber = request.POST['register_number']
         NumberOfSeats = request.POST['NumberOfSeats']
         route = request.POST['route']
+        print(route)
         obb = Route.objects.get(RouteId = route)
         ob=BusRegister()
         ob.BusRegisterNUmber=RegisterNUmber
@@ -115,20 +116,21 @@ def bustime(request):
 def AddStop(request):
     ob = BusRegister.objects.all()
     if request.method == "POST":
-        Bus = request.POST['Bus']
+        route = request.POST['Bus']
         Stop = request.POST['Stop']
         Latitude = request.POST['Latitude']
         Longitude = request.POST['Longitude']
         TicketCharge = request.POST['TicketCharge']
-        obb = Route.objects.get(RouteId = Bus)
-        dbval = BusStop()
-        dbval.RouteId=obb
-        dbval.Stop = Stop
-        dbval.Latitude = Latitude
-        dbval.Longitude = Longitude
-        db.TicketCharge = TicketCharge
-        dbval.save()
-        return redirect("/stopdetails")
+        obb = Route.objects.get(RouteId = route)
+        print(route)
+        # dbval = BusStop()
+        # dbval.RouteId=obb
+        # dbval.Stop = Stop
+        # dbval.Latitude = Latitude
+        # dbval.Longitude = Longitude
+        # dbval.TicketCharge = TicketCharge
+        # dbval.save()
+        # return redirect("/stopdetails")
     return render(request, "AddStop.html",{'busregisters': ob})
 
 

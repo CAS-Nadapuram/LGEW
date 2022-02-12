@@ -30,10 +30,10 @@
             <table border="0">
               <tr>
                 <td>
-                  <label for="">Bus</label>
+                  <label for="BUS">Bus</label>
                 </td>
                 <td>
-                  <select name="Bus" id="">
+                  <select name="Bus">
                     {% for busregister in busregisters %}
                       <option value="{{ busregister.RouteId }}">{{ busregister.BusRegisterNUmber }}</option>
                     {% endfor %}
@@ -42,7 +42,7 @@
               </tr>
               <tr>
                 <td>
-                  <label for="">Stop</label>
+                  <label for="Stop">Stop</label>
                 </td>
                 <td>
                     <input type="text" name = "Stop"/>
