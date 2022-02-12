@@ -86,21 +86,26 @@ def deleteroute(request, id):
 
 
 def busmanagement_add(request,):
-    BusReg = BusRegister.objects.all()
+    BusReg = Route.objects.all()
     if request.method == "POST":
         RegisterNUmber = request.POST['register_number']
         NumberOfSeats = request.POST['NumberOfSeats']
-        StartingStop = request.POST['StartingStop']
-        EndingStop = request.POST['endingstop']
-        route = Route.objects.create(
-            StartingStop=StartingStop, EndingStop=EndingStop)
-        BusRegister.objects.create(
-            BusRegisterNUmber=RegisterNUmber,
-            SeatCapacity=NumberOfSeats,
-            route=route
-        )
-        redirect("//busmanagement")
+        route = request.POST['route']
+        obb = Route.objects.get(RouteId = route)
+        ob=BusRegister()
+        ob.BusRegisterNUmber=RegisterNUmber
+        ob.SeatCapacity=NumberOfSeats
+        ob.RouteId=obb
+        ob.save()
+        return redirect("/busmanagement")
     return render(request, "BusManagement-add.html", {"route": BusReg})
+
+
+
+
+
+
+
 
 
 def bustime(request):
@@ -115,11 +120,15 @@ def AddStop(request):
         Latitude = request.POST['Latitude']
         Longitude = request.POST['Longitude']
         TicketCharge = request.POST['TicketCharge']
-
-        # routes = BusRegister.objects.get(RouteId = bus )
-        # BusStop.objects.create(RouteId =  routes, stop = Stop, Latitude = Latitude, Longitude = Longitude
-        # , TicketCharge = TicketCharge)
-        redirect("/stopdetails")
+        obb = Route.objects.get(RouteId = Bus)
+        dbval = BusStop()
+        dbval.RouteId=obb
+        dbval.Stop = Stop
+        dbval.Latitude = Latitude
+        dbval.Longitude = Longitude
+        db.TicketCharge = TicketCharge
+        dbval.save()
+        return redirect("/stopdetails")
     return render(request, "AddStop.html",{'busregisters': ob})
 
 

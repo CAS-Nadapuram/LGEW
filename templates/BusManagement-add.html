@@ -18,7 +18,6 @@
           <td><a href="/stopdetails">  stop details</td></a>
           <td><a href="/bustime">  Bus time</td></a>
           <td><a href="/feedback">  feedback</td></a>
-          <td><a href="/passenger">  Passanger</td></a>
           <td><a href="/track">  track bus</td></a>
           <td><a href="/">  logout</td></a>
       </tr>
@@ -38,11 +37,9 @@
               <td>
                 <select name="route">
                   {% for routes in route %}
-                    <option value="{{ routes.RouteId.StartingStop }} - {{ routes.RouteId.EndingStop }}">
-                      {{ routes.RouteId.StartingStop }} - {{ routes.RouteId.EndingStop }}
+                    <option value="{{ routes.RouteId }}">
+                      {{ routes.StartingStop }} - {{ routes.EndingStop }}
                     </option>
-                    <!-- <input type="text" value="{{routes.RouteId.StartingStop }}" name="StartingStop">
-                    <input type="text" value="{{routes.RouteId.EndingStop }}" name="endingstop"> -->
                   {% endfor %}
                 </select>
               </td>

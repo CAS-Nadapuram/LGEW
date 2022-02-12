@@ -18,7 +18,6 @@
             <td><a href="/stopdetails">  stop details</td></a>
             <td><a href="/bustime">  Bus time</td></a>
             <td><a href="/feedback">  feedback</td></a>
-            <td><a href="/passenger">  Passanger</td></a>
             <td><a href="/track">  track bus</td></a>
             <td><a href="/">  logout</td></a>
         </tr>
@@ -36,7 +35,7 @@
                 <td>
                   <select name="Bus" id="">
                     {% for busregister in busregisters %}
-                      <option value="">{{ busregister.BusRegisterNUmber }}</option>
+                      <option value="{{ busregister.RouteId }}">{{ busregister.BusRegisterNUmber }}</option>
                     {% endfor %}
                   </select>
                 </td>

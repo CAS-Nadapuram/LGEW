@@ -73,17 +73,17 @@ WSGI_APPLICATION = 'LGEW.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'LGEW',
-        'HOST': 'localhost',
-        'PORT': '3308',
-        'PASSWORD': 'vishnu',
-        'USER': 'vaishnav',
+        'HOST':'localhost',
+        'PORT':'3308',
+         'PASSWORD' : '1234567890',
+         'USER' : 'root',
     }
 }
+
 
 
 # Password validation
