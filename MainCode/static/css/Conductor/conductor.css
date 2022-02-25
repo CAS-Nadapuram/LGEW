@@ -70,8 +70,6 @@
 }
 
 .table-container .add input:hover {
-  -webkit-box-shadow: 0 0 5px #20ca37, 0 0 10px #20ca37, 0 0 30px #20ca37, 0 0 60px #20ca37, 0 0 120px #20ca37;
-          box-shadow: 0 0 5px #20ca37, 0 0 10px #20ca37, 0 0 30px #20ca37, 0 0 60px #20ca37, 0 0 120px #20ca37;
   background: #20ca37;
   color: #112;
 }

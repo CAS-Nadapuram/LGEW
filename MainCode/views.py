@@ -23,9 +23,9 @@ def main(request):
 
 
 def adminhome(request):
-    return render(request, "AdminHome.html", 
-    # {"user": Username}
-    )
+    return render(request, "AdminHome.html",
+                  # {"user": Username}
+                  )
 
 
 def AddBusTime(request):
@@ -92,25 +92,23 @@ def busmanagement_add(request,):
         NumberOfSeats = request.POST['NumberOfSeats']
         route = request.POST['route']
         print(route)
-        obb = Route.objects.get(RouteId = route)
-        ob=BusRegister()
-        ob.BusRegisterNUmber=RegisterNUmber
-        ob.SeatCapacity=NumberOfSeats
-        ob.RouteId=obb
+        obb = Route.objects.get(RouteId=route)
+        ob = BusRegister()
+        ob.BusRegisterNUmber = RegisterNUmber
+        ob.SeatCapacity = NumberOfSeats
+        ob.RouteId = obb
         ob.save()
         return redirect("/busmanagement")
     return render(request, "BusManagement-add.html", {"route": BusReg})
 
 
-
-
-
-
-
-
-
 def bustime(request):
-    return render(request, "BusTime.html")
+    if request.method == "POST":
+        BusName = request.POST['busname']
+        print(BusName)
+    BusData = Bustime.objects.all()
+    # busTmeData = Bustime.objects.get(StopId = BusName)
+    return render(request, "BusTime.html", {'busdetails': BusData})
 
 
 def AddStop(request):
@@ -121,17 +119,16 @@ def AddStop(request):
         Latitude = request.POST['Latitude']
         Longitude = request.POST['Longitude']
         TicketCharge = request.POST['TicketCharge']
-        obb = Route.objects.get(RouteId = route)
-        print(route)
-        # dbval = BusStop()
-        # dbval.RouteId=obb
-        # dbval.Stop = Stop
-        # dbval.Latitude = Latitude
-        # dbval.Longitude = Longitude
-        # dbval.TicketCharge = TicketCharge
-        # dbval.save()
-        # return redirect("/stopdetails")
-    return render(request, "AddStop.html",{'busregisters': ob})
+        obb = Route.objects.get(RouteId=route)
+        dbval = BusStop()
+        dbval.RouteId = obb
+        dbval.Stop = Stop
+        dbval.Latitude = Latitude
+        dbval.Longitude = Longitude
+        dbval.TicketCharge = TicketCharge
+        dbval.save()
+        return redirect("/stopdetails")
+    return render(request, "AddStop.html", {'busregisters': ob})
 
 
 def conductor(request):
@@ -172,15 +169,17 @@ def RouteAdd(request):
     return render(request, "RouteAdd.html")
 
 
-    
 def stopdetailz(request):
     ob = BusRegister.objects.all()
-    print(ob)
     if request.method == "POST":
-            Bus = request.POST['busnumber']
-            id = BusRegister.objects.get(BusRegisterNUmber = Bus)
-            # busdata = BusStop.objects.all().prefetch_related(id) 
-    return render(request, "stopdetails.html",{'busregister' : ob})
+        Bus = request.POST['busnumber']
+        # id = BusStop.objects.get(RouteId=Bus)
+        obb = BusRegister.objects.get(BusRegisterNUmber=Bus)
+        # print(obb.RouteId.RouteId.Stop)
+    return render(request, "stopdetails.html",
+     {'busregister': ob},
+    #  {'obb': obb}
+     )
 
 
 def track(request):

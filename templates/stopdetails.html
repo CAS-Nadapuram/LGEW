@@ -18,7 +18,6 @@
             <td><a href="/stopdetails">  stop details</td></a>
             <td><a href="/bustime">  Bus time</td></a>
             <td><a href="/feedback">  feedback</td></a>
-            <td><a href="/passenger">  Passanger</td></a>
             <td><a href="/track">  track bus</td></a>
             <td><a href="/">  logout</td></a>
         </tr>
@@ -43,24 +42,22 @@
                         </td>
                 </form>
                 </tr>
-            <tr>
+                <tr>
                     <td>stop</td>
                     <td>ticket charge</td>
+                </tr>
+                <tr>
+                    <td>vatakara</td>
+                    <td>100</td>
                 </tr>
                 <tr>
                     <td colspan="3" align="center">
                         <a href="/addstop">
                             <input type="button" value="add">
                         </a>
-                        </td>
+                    </td>
                 </tr>
             </table>
-            {%for i in name %}
-
-            {{ i.stop }}
-            {{ I.ticketCharge }}
-
-        {% endfor %}
     </header>
   </div>
 </body>

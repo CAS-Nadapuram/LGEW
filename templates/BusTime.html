@@ -24,13 +24,16 @@
         </table>
     </header>
         <header>
+            <form action="" method="POST">
+                {% csrf_token %}
             <table>
                 <tr>
                     <td>Bus</td>
                     <td>
-                        <select name="" id="">
-                            <option value="">KL10n123</option>
-                            <option value="">Kl2323</option>
+                        <select name="busname" id="">
+                           {% for busdetail in busdetails %}
+                            <option value="{{ busdetail.StopId }}">{{ busdetail.BusId.BusRegisterNUmber }}</option>
+                            {% endfor %}
                         </select>
                     </td>
                     <td>
@@ -52,6 +55,7 @@
                     </td>
                 </tr>
             </table>
+            </form>
         </header>
     </div>
 </body>

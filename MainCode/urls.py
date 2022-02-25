@@ -21,5 +21,5 @@ urlpatterns = [
     path('deleteconductor/<int:id>', views.deleteconductor, name="deleteconductor"),
     path('deleteroute/<int:id>', views.deleteroute, name="deleteroute"),
     path('deletebus/<str:id>', views.deletebus, name="deletebus"),
-        path('updatebus/<str:id>', views.updatebus, name="updatebus"),
+    path('updatebus/<str:id>', views.updatebus, name="updatebus"),
 ]
