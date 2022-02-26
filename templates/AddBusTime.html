@@ -33,9 +33,9 @@
               </td>
               <td>
                 <select name="stop" id="">
-                  <option value="kozhikode">kozhikode</option>
-                  <option value="">vatakara</option>
-                  <option value="">Nad</option>
+                  {% for i in data %}
+                  <option value="{{ i.stopID }}">{{ i.stop }}</option>
+                  {% endfor %}
                 </select>
               </td>
             </tr>

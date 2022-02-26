@@ -29,12 +29,13 @@ def adminhome(request):
 
 
 def AddBusTime(request):
+    ob = BusStop.objects.all()
     if request.method == "POST":
         stop = request.POST['stop']
         time = request.POST['time']
-        print(stop, time)
-    return render(request, "AddBusTime.html")
-
+        # obb = Bus
+        print(stop)
+    return render(request, "AddBusTime.html", {'data' : ob })
 
 def busmanagement(request):
     BusReg = BusRegister.objects.all()
@@ -119,14 +120,9 @@ def AddStop(request):
         Latitude = request.POST['Latitude']
         Longitude = request.POST['Longitude']
         TicketCharge = request.POST['TicketCharge']
-        obb = Route.objects.get(RouteId=route)
-        dbval = BusStop()
-        dbval.RouteId = obb
-        dbval.Stop = Stop
-        dbval.Latitude = Latitude
-        dbval.Longitude = Longitude
-        dbval.TicketCharge = TicketCharge
-        dbval.save()
+        obb = Route.objects.get(StartingStop=route)
+        BusStop.objects.create(stop = Stop, Latitude = Latitude, Longitude = Longitude, 
+        TicketCharge = TicketCharge, RouteId = obb)
         return redirect("/stopdetails")
     return render(request, "AddStop.html", {'busregisters': ob})
 
@@ -180,6 +176,22 @@ def stopdetailz(request):
      {'busregister': ob},
     #  {'obb': obb}
      )
+
+def searchticket(request):
+    ob = BusRegister.objects.all()
+    if request.method == "POST":
+        Bus = request.POST['busnumber']
+        obb = BusRegister.objects.get(BusRegisterNUmber=Bus)
+        obbs=BusStop.objects.filter(RouteId=obb.RouteId)
+        print(Bus)
+    return render(request, "stopdetails.html",
+        {'busregister': ob,"stop":obbs}        )
+
+
+
+
+
+
 
 
 def track(request):

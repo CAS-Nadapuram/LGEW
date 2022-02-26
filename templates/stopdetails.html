@@ -26,7 +26,7 @@
     <header>
             <table>
                 <tr>
-                    <form method="POST" action="">
+                    <form method="POST" action="searchticket">
                     {% csrf_token %}
                         <td>bus</td>
                         <td>
@@ -46,10 +46,12 @@
                     <td>stop</td>
                     <td>ticket charge</td>
                 </tr>
+                {% for data in stop %}
                 <tr>
-                    <td>vatakara</td>
-                    <td>100</td>
+                    <td>{{ data.stop }}</td>
+                    <td>{{ data.TicketCharge }}</td>
                 </tr>
+                {% endfor %}
                 <tr>
                     <td colspan="3" align="center">
                         <a href="/addstop">
