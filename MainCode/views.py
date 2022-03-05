@@ -35,7 +35,8 @@ def AddBusTime(request):
         time = request.POST['time']
         # obb = Bus
         print(stop)
-    return render(request, "AddBusTime.html", {'data' : ob })
+    return render(request, "AddBusTime.html", {'data': ob})
+
 
 def busmanagement(request):
     BusReg = BusRegister.objects.all()
@@ -46,7 +47,7 @@ def updatebus(request, id):
     BusReg = BusRegister.objects.all()
     busdetail = BusRegister.objects.get(BusRegisterNUmber=id)
     print(BusReg)
-    # return render(request, "BusManagement-add.html", {'busdetails' : busdetail,'route' : BusReg})
+    return render(request, "BusManagement-add.html",)
 
 
 def addconductor(request):
@@ -121,8 +122,8 @@ def AddStop(request):
         Longitude = request.POST['Longitude']
         TicketCharge = request.POST['TicketCharge']
         obb = Route.objects.get(StartingStop=route)
-        BusStop.objects.create(stop = Stop, Latitude = Latitude, Longitude = Longitude, 
-        TicketCharge = TicketCharge, RouteId = obb)
+        BusStop.objects.create(stop=Stop, Latitude=Latitude, Longitude=Longitude,
+                               TicketCharge=TicketCharge, RouteId=obb)
         return redirect("/stopdetails")
     return render(request, "AddStop.html", {'busregisters': ob})
 
@@ -173,31 +174,41 @@ def stopdetailz(request):
         obb = BusRegister.objects.get(BusRegisterNUmber=Bus)
         # print(obb.RouteId.RouteId.Stop)
     return render(request, "stopdetails.html",
-     {'busregister': ob},
-    #  {'obb': obb}
-     )
+                  {'busregister': ob},
+                  #  {'obb': obb}
+                  )
+
 
 def searchticket(request):
     ob = BusRegister.objects.all()
     if request.method == "POST":
         Bus = request.POST['busnumber']
         obb = BusRegister.objects.get(BusRegisterNUmber=Bus)
-        obbs=BusStop.objects.filter(RouteId=obb.RouteId)
+        obbs = BusStop.objects.filter(RouteId=obb.RouteId)
         print(Bus)
     return render(request, "stopdetails.html",
-        {'busregister': ob,"stop":obbs}        )
-
-
-
-
-
-
+                  {'busregister': ob, "stop": obbs})
 
 
 def track(request):
+    obj = BusRegister.objects.all()
     if request.method == "POST":
         BusNumber = request.POST['BusNumber']
-        print(BusNumber)
+        ob = BusRegister.objects.get(BusRegisterNUmber=BusNumber)
+        busstop = BusStop.objects.get(RouteId=ob.RouteId)
+        # return redirect("https://www.google.com/maps?q={busstop.Latitude},{busstop.Longitude}")
+        # return redirect("https://www.google.com/maps?q=37.819722,-122.478611")
+        return redirect("/map")        
     else:
         pass
-    return render(request, "track.html")
+    return render(request, "track.html", {
+        'busregisters': obj,
+    })
+
+
+def mapview(request):
+    return render(request, "map.html")
+
+
+# https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.7330220952845!2d-122.48079968468095!3d37.8197219797513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x67540215e3e68cf0!2zMzfCsDQ5JzExLjAiTiAxMjLCsDI4JzQzLjAiVw!5e0!3m2!1sen!2sin!4v1646504378420!5m2!1sen!2sin" 
+# 37.819722,-122.478611

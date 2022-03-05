@@ -17,6 +17,7 @@ urlpatterns = [
     path('route', views.Routee),
     path('routeadd', views.RouteAdd),
     path('stopdetails', views.stopdetailz),
+    path('map', views.mapview),
     path('track', views.track),
     path('deleteconductor/<int:id>', views.deleteconductor, name="deleteconductor"),
     path('searchticket',views.searchticket),

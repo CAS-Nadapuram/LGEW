@@ -32,9 +32,9 @@
                         <td>bus</td>
                         <td>
                             <select name="BusNumber" id="">
-                                <option value="Kl10n123">Kl10n123</option>
-                                <option value="Kl10n163">Kl10n123</option>
-                                <option value="Kl10n133">Kl10n123</option>
+                               {% for bus in busregisters %}
+                                <option value="{{bus.BusRegisterNUmber}}">{{bus.BusRegisterNUmber}}</option>
+                                {% endfor %}
                             </select>
                         </td>
                     </tr>
