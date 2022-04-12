@@ -1,0 +1,63 @@
+{% extends 'index.html' %}
+{% block body %}<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+      <style>
+#customer th,td {
+  font-size: 24;
+  color:white;
+}
+</style>
+  </head>
+  <body>
+
+        <form method="post" action="">
+          {% csrf_token %}
+          <table border="0" id="customer">
+            <tr>
+              <td>
+                <label for="stop">BUS</label>
+              </td>
+              <td>
+                <select name="bus" id="" required>
+                  <option value="">select</option>
+                  {% for i in data %}
+                  <option value="{{ i.BusId }}">{{ i.BusRegisterNUmber }}</option>
+                  {% endfor %}
+                </select>
+              </td>
+            </tr> <tr>
+              <td>
+                <label for="stop">Stop</label>
+              </td>
+              <td>
+                <select name="stop" required>
+                                    <option value="">select</option>
+
+                  {% for i in bs %}
+                  <option value="{{ i.StopId }}">{{ i.stop }}</option>
+                  {% endfor %}
+                </select>
+              </td>
+            </tr>
+            <tr>
+                <td>
+                  <label for="time">Time</label>
+              </td>
+              <td>
+                  <input type="time" name="time"  required/>
+              </td>
+            </tr>
+            <tr >
+                <td colspan="2" align="center">
+                  <input type="submit" value="add" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">
+                </td>
+            </tr>
+          </table>
+        </form>
+  </body>
+{% endblock %}

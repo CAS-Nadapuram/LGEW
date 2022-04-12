@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+{% block body %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+ <style>
+#customer th,td {
+  font-size: 24;
+  color:white;
+}
+</style>
+<body>
+            <form action="" method="post">
+                {% csrf_token %}
+                <table id="customer">
+                    <tr>
+                        <td>Choose bus</td>
+                        <td>
+                            <select name="BusNumber" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4" required>
+                                                  <option value="">select</option>
+                               {% for bus in busregisters %}
+                                <option value="{{bus.BusRegisterNUmber}}">{{bus.BusRegisterNUmber}}</option>
+                                {% endfor %}
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="submit" value="track" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+</body>
+{% endblock %}

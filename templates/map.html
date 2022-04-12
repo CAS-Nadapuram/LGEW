@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+{% block body %}<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="main-container">
+        <table class="Navbar">
+          <tr>
+              <td><a href="/adminhome">  Home</td></a>
+              <td><a href="/conductor">  Conductor Details</td></a>
+              <td><a href="/busmanagement">  Bus Management</td></a>
+              <td><a href="/route">  Route</td></a>
+              <td><a href="/stopdetails">  stop details</td></a>
+              <td><a href="/bustime">  Bus time</td></a>
+              <td><a href="/feedback">  feedback</td></a>
+              <td><a href="/track">  track bus</td></a>
+              <td><a href="/">  logout</td></a>
+          </tr>
+      </table>
+      <header>
+        <iframe src="https://www.google.com/maps/embed?q=37.819722,-122.478611" width="700" height="500" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </header>
+    </div>
+</body>
+{% endblock %}

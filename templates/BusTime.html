@@ -1,0 +1,48 @@
+{% extends 'index.html' %}
+{% block body %}<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+            <form action="" method="POST">
+                {% csrf_token %}
+            <table id="customers">
+                <tr>
+                    <th>Bus</th>
+                    <th>
+                        <select name="busname" id="" required>
+                                              <option value="">select</option>
+
+                           {% for busdetail in busdetails %}
+                            <option value="{{ busdetail.BusId }}">{{ busdetail.BusRegisterNUmber }}</option>
+                            {% endfor %}
+                        </select>
+                    </th>
+                        <th><input type="submit" value="submit"></th>
+
+                </tr>
+                <tr>
+                    <th>stop</th>
+                    <th>Time</th>
+                    <th></th>
+                </tr>
+                {% for i in bd%}
+                <tr>
+                    <td>{{i.StopId.stop}}</td>
+                    <td>{{i.Time}}</td>
+                    <td><a href="{% url 'deletebustime' id=i.TimeId %}" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">Delete</a></td>
+                </tr>
+                {% endfor %}
+
+            </table>
+                <a href="/addbustime"><input type="button" value="add" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">
+                        </a>
+            </form>
+
+</body>
+{% endblock %}

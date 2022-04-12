@@ -1,0 +1,34 @@
+{% extends 'index.html' %}
+{% block body %}<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+    <!-- <link rel="stylesheet" type="text/css" href="/static/css/Feedback/feedback.css"> -->
+    <link rel="stylesheet" type="text/css" href="/static/css/Conductor/conductor.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+        <form action="">
+            <table id="customers">
+                <tr>
+                    <th>name</th>
+                    <th>feedback</th>
+                    <th>date</th>
+                </tr>
+                {% for feedback in feedbacks %}
+                <tr>
+                    <td>
+                        {{ feedback.User_id.FirstName }} {{ feedback.User_id.LastName }}
+                    </td>
+                    <td>{{ feedback.Feedback }}</td>
+                    <td>{{ feedback.Date }}</td>
+                </tr>
+            {% endfor %}
+            </table>
+        </form>
+
+</body>
+{% endblock %}

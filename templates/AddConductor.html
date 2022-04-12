@@ -1,0 +1,100 @@
+{% extends 'index.html' %}
+{% block body %}<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+    <!-- <link rel="stylesheet" type="text/css" href="/static/css/AddConductor/addconductor.css"> -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+ <style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+
+#customer th {
+  font-size: 24;
+  color:white;
+}
+</style>
+  </head>
+  <body>
+
+
+          <form action="" method="POST">
+            {% csrf_token %}
+            <table id="customer">
+                <tr>
+                  <th>
+                    <label for="">First name</label>
+                  </th>
+                  <td>
+                    <input type="text" name="firstname" required pattern="[A-Z a-z]{2,}"/>
+                  </td>
+                </tr>
+                <tr>
+                  <th><label for="">last name</label></th>
+                  <td>
+                    <input type="text" name="lastname" required pattern="[A-Z a-z]{1,}"/>
+                  </td>
+                </tr>
+                <tr>
+                  <th><label for="">Contact</label></th>
+                  <td>
+                    <input type="number" name="contact" required pattern="[6789][0-9]{9}"/>
+                  </td>
+                </tr>
+                <tr>
+                  <th><label for="">place</label></th>
+                  <td>
+                    <input type="text" name="place" required pattern="[A-Z a-z]{2,}"/>
+                  </td>
+                </tr>
+              <tr>
+                <th><label for="">bus</label></th>
+                <td>
+                  <select name="bus" required>
+                      <option value="">Select</option>
+                      {% for i in data %}
+                      <option value="{{i.BusId}}"> {{i.BusRegisterNUmber}}</option>
+                      {% endfor %}
+                  </select>
+                </td>
+              </tr>
+
+              <tr>
+                <th><label for="">post</label></th>
+                <td><input type="text" name="post" required pattern="[A-Z a-z]{2,}"/></td>
+              </tr>
+  
+              <tr>
+                <th><label for="">pin</label></th>
+                <td>
+                  <input type="number" name = "pin" required pattern="[0-9]{6}"/>
+                </td>
+              </tr>
+              
+              <tr>
+                <th><label for="">username</label></th>
+               <td> <input type="text" name="username" required/></td>
+              </tr>
+              <tr>
+                <th><label for="">password</label></th>
+                <td><input type="password" name="password" required/></td>
+              </tr>
+              <tr>
+                  <td colspan="2" align="center"><input type="submit" value="submit" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4"></td>
+              </tr>
+            </table>
+          </form>
+
+
+  </body>
+{% endblock %}

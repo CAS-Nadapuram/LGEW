@@ -1,0 +1,38 @@
+{% extends 'index.html' %}
+{% block body %}<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>      <style>
+          #customer th,td {
+  font-size: 24;
+  color:white;
+}
+      </style>
+<body>
+
+        <form method = "POST" action="">
+            {% csrf_token %}
+            <table id="customer">
+                <tr>
+                    <td>starting stop</td>
+                    <td><input type="text" name = "StartingStop" required pattern="[A-Z a-z]{2,}"></td>
+                </tr>
+                <tr>
+                    <td>ending stop</td>
+                    <td><input type="text" name = "EndingStop" required pattern="[A-Z a-z]{2,}"></td>
+                </tr>
+                <tr>
+                    <td colspan="2" align="center">
+                        <input type="submit" value="add" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+</body>
+{% endblock %}

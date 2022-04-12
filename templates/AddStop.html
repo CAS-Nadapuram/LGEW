@@ -1,0 +1,71 @@
+{% extends 'index.html' %}
+{% block body %}
+<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+      <style>
+          #customer th,td {
+  font-size: 24;
+  color:white;
+}
+      </style>
+  </head>
+  <body>
+            <form method = "POST" action="">
+              {% csrf_token %}
+            <table border="0" id="customer">
+              <tr>
+                <td>
+                  <label for="BUS">Bus</label>
+                </td>
+                <td>
+                  <select name="Bus" required>
+                                        <option value="">select</option>
+                    {% for busregister in busregisters %}
+                      <option value="{{ busregister.RouteId }}">{{ busregister.StartingStop }}-{{ busregister.EndingStop }}</option>
+                    {% endfor %}
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <label for="Stop">Stop</label>
+                </td>
+                <td>
+                    <input type="text" name = "Stop" required/>
+                </td>
+              </tr>
+              <tr>
+                  <td>
+                      <label for="">Latitude</label>
+                  </td>
+                  <td>
+                      <input type="text" name = "Latitude" required>
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                      <label for="">Longitude</label>
+                  </td>
+                  <td>
+                      <input type="text" name = "Longitude" required>
+                  </td>
+              </tr>
+              <tr>
+                  <td>
+                      <label for="">Ticket charge</label>
+                  </td>
+                  <td><input type="number" name = "TicketCharge" required></td>
+              </tr>
+              <tr>
+                  <td colspan="2" align="center"><input type="submit" value="submit" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4"></td>
+              </tr>
+            </table>
+          </form>
+
+  </body>
+{% endblock %}

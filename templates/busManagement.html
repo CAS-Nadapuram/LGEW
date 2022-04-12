@@ -1,0 +1,42 @@
+{% extends 'index.html' %}
+{% block body %}<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+    <script src="https://kit.fontawesome.com/f5ca60cca4.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="/static/css/BusManagement/busmanagement.css"> -->
+    <link rel="stylesheet" type="text/css" href="/static/css/Conductor/conductor.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+
+        <form action="">
+          <table id="customers">
+            <tr>
+              <th>Bus register number</th>
+              <th>seat</th>
+              <th>route</th>
+              <th></th>
+            </tr>
+            {% for data in busreg %}
+            <tr>
+              <td>{{ data.BusRegisterNUmber }}</td>
+              <td>{{ data.SeatCapacity }}</td>
+              <td>{{ data.RouteId.StartingStop }} - {{ data.RouteId.EndingStop }}</td>
+              <td align="center">
+                <a href="deletebus/{{ data.BusRegisterNUmber }}" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">
+                Delete
+                </a>
+              </td>
+
+            </tr>
+            {% endfor %}
+          </table>
+        </form>
+          <a href="/busmanagement_add">
+            <input type="button" value="add" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4"/>
+          </a>
+  </body>
+{% endblock %}

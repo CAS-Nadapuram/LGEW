@@ -1,0 +1,53 @@
+{% extends 'index.html' %}
+{% block body %}
+<html lang="en">
+<head>
+    <script src="https://kit.fontawesome.com/f5ca60cca4.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+    <link rel="stylesheet" type="text/css" href="/static/css/Conductor/conductor.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<div class="table-container">
+    <header>
+        <form action="">
+            <table border="1" id="customers">
+                <tr>
+                    <th>first Name</th>
+                    <th>last name</th>
+                    <th>contact</th>
+                    <th>place</th>
+                    <th>Post</th>
+                    <th>pin</th>
+                    <th>bus</th>
+                    <th></th>
+                </tr>
+                {% for i in data %}
+                <tr class="alldata">
+                    <td> {{i.FirstName}} </td>
+                    <td>{{ i.LastName }}</td>
+                    <td> {{ i.Contact }}</td>
+                    <td>{{ i.Place }}</td>
+                    <td>{{ i.Post }}</td>
+                    <td>{{ i.pin }}</td>
+                    <td>{{i.Bus.BusRegisterNUmber}}</td>
+                    <td>
+                        <a href="deleteconductor/{{i.UserId}}" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">Delete</a>
+                        <!-- {% comment %} <a href="{% url 'deleteconductor' id=i.UserId %}">Delete</a> {% endcomment %} -->
+                    </td>
+                </tr>
+                {% endfor %}                
+            </table>
+        </form>
+    </header>
+        <a  href="/addconductor" >
+            <input type="button" value="add" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">
+        </a>
+</div>
+   </div>
+</body>
+{% endblock %}

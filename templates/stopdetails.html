@@ -1,0 +1,54 @@
+{% extends 'index.html' %}
+{% block body %}
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<body>
+                    <form method="POST" action="searchticket">
+
+            <table id="customers">
+                <tr>
+                    {% csrf_token %}
+                        <th>bus</th>
+                        <th>
+                            <select name="busnumber" required>
+                                <option value="">Select</option>
+                                {% for busregisters in busregister %}
+                                <option value="{{ busregisters.RouteId }}">{{ busregisters.StartingStop }}-{{ busregisters.EndingStop }}</option>
+                                {% endfor %}
+                            </select>
+                        </th>
+                        <th>
+                            <input type="submit" value="search" >
+                        </th>
+                </tr>
+            </table>
+                        <table id="customers">
+                <tr>
+                    <th>stop</th>
+                    <th>ticket charge</th>
+                    <th></th>
+                </tr>
+                {% for data in stop %}
+                <tr class="alldata">
+                    <td>{{ data.stop }}</td>
+                    <td>{{ data.TicketCharge }}</td>
+                    <td><a href="{% url 'deletestop' id=data.StopId %}" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">Delete</a> </td>
+                </tr>
+                {% endfor %}
+
+
+
+            </table>
+                         <a href="/addstop">
+                            <input type="button" value="add" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4">
+                        </a>
+                    </form>
+
+</body>
+{% endblock %}

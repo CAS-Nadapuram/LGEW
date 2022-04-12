@@ -1,0 +1,20 @@
+header {
+  width: 80%;
+  background-color: #fff;
+  scroll-margin-bottom: none;
+  overflow: scroll;
+  border-bottom: 1px solid #e2dddd;
+  border-left: 1px dotted #eee7e7;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+          box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+header table {
+  width: 100%;
+  background-color: green;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
+}
+/*# sourceMappingURL=addconductor.css.map */

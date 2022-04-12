@@ -1,0 +1,52 @@
+{% extends 'index.html' %}
+{% block body %}<html lang="en">
+  <head>
+    <link rel="stylesheet" type="text/css" href="/static/css/index.css">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+    #customer th,td {
+  font-size: 24;
+  color:white;
+}
+</style>
+  </head>
+  <body>
+
+        <form method = "POST" action="">
+          {% csrf_token %}
+          <table id="customer">
+            <tr>
+              <td>Bus register number</td>
+              <td><input type="text" name = "register_number" value="{{busdetails.BusRegisterNUmber}}" required/></td>
+            </tr>
+            <tr>
+              <td>Route</td>
+              <td>
+                <select name="route" required>
+                                    <option value="">select</option>
+
+                  {% for routes in route %}
+                    <option value="{{ routes.RouteId }}">
+                      {{ routes.StartingStop }} - {{ routes.EndingStop }}
+                    </option>
+                  {% endfor %}
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>Number of seats</td>
+              <td>
+                <input type="number" name="NumberOfSeats" id="" value="{{busdetails.SeatCapacity}}" required/>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" align ="center"><input type="submit" value="submit" class="btn btn-lg btn-primary mt-3 mt-md-4 px-4"/></td>
+            </tr>
+          </table>
+        </form>
+
+  </body>
+{% endblock %}
