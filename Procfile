@@ -1,1 +1,3 @@
-web: gunicorn LGEW.wsgi --log-file -
+web: gunicorn LGEW.wsgi:application --log-file - --log-level debug
+python manage.py collectstatic --noinput
+manage.py migrate
