@@ -1,1 +1,1 @@
-web: gunicorn projectcas.wsgi --log-file -
+web: gunicorn LGEW.wsgi --log-file -
