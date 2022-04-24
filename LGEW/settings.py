@@ -102,7 +102,7 @@ DATABASES = {
         'NAME': 'lgew', 
         'USER': 'vaishnav', 
         'PASSWORD': 'vishnu',
-        'HOST': 'localhost', 
+       'HOST': '127.0.0.1', 
         'PORT': '5432',
     }
 }
