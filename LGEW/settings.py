@@ -83,20 +83,29 @@ WSGI_APPLICATION = 'LGEW.wsgi.application'
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'LGEW',
+#         'HOST':'localhost',
+#         'PORT':'3308',
+#         #  'PASSWORD' : '1234567890',
+#         #  'USER' : 'root',
+# 	    'PASSWORD': 'vishnu',
+#         'USER': 'vaishnav',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'LGEW',
-        'HOST':'localhost',
-        'PORT':'3308',
-        #  'PASSWORD' : '1234567890',
-        #  'USER' : 'root',
-	    'PASSWORD': 'vishnu',
-        'USER': 'vaishnav',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'lgew', 
+        'USER': 'vaishnav', 
+        'PASSWORD': 'vishnu',
+        'HOST': 'localhost', 
+        'PORT': '5432',
     }
 }
-
-
 
 
 
@@ -148,3 +157,4 @@ MEDIA_ROOT=os.path.join(BASE_DIR,'media')
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
